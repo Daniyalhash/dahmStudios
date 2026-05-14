@@ -25,6 +25,7 @@
 .lp__root {
     width: 100%;
     min-height: 100vh;
+    height: auto;
     background: var(--lp-bg);
     font-family: var(--lp-font-body);
     overflow-x: hidden;
@@ -633,19 +634,21 @@
 
 @media (max-width: 912px) {
     .lp__root {
-        min-height: 100%;
-        /* ← stops extra space */
-        height: 100%;
+        height: auto;
+        min-height: auto;
     }
 
     .lp__hero {
-        min-height: 100%;
+        min-height: auto;
+        height: auto;
     }
 
     .lp__right {
-        min-height: 100%;
-    }
+        min-height: auto;
+        height: auto;
 
+
+    }
     .lp__title-block {
         padding: 46px 0 0;
     }
@@ -655,13 +658,8 @@
     }
 
     .lp__cta-secondary {
-
         font-size: 14px;
     }
-
-    
-
-   
 }
 
 @media (max-width: 830px) {

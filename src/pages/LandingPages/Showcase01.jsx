@@ -99,7 +99,6 @@ export default function Showcase01() {
                     <span className="showcase_01__count">{String(projects.length).padStart(2, "0")} Projects</span>
                 </div>
             </div> */}
-
             {/* Scrollable track */}
             <div className="showcase_01__track-wrap">
                 <div className="showcase_01__track" ref={trackRef}>
