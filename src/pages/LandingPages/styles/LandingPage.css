@@ -40,6 +40,27 @@
     overflow: hidden;
 }
 
+.lp__hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background-image: repeating-linear-gradient(
+        to right,
+        rgba(0,0,0,0.08) 0px,
+        rgba(0,0,0,0.08) 1px,
+        transparent 1px,
+        transparent 300px
+    );
+
+    background-size: 300px 100%;
+
+    /* IMPORTANT */
+    background-position-x: calc(40%);
+
+    pointer-events: none;
+    z-index: 4;
+}
 /* ─── Left image panel ── */
 /* ─── Left image panel — now true background ── */
 /* ─── Left image panel — covers only left 40% ── */
@@ -50,11 +71,10 @@
     width: 40%;
     /* ← only left 40% */
     min-height: 100%;
-    z-index: 0;
+    z-index: 2;
     overflow: visible;
     background: #1a1a1a;
 }
-
 .lp__bg-img {
     position: absolute;
     inset: 0;
@@ -64,78 +84,21 @@
     object-position: center top;
     filter: grayscale(1) contrast(1.05);
     opacity: 0.88;
+    z-index: 2;
 }
 
-/* .lp__glitch {
+.lp__image-panel::after {
+    content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        135deg,
-        transparent 0%,
-        rgba(255, 80, 0, 0.08) 20%,
-        rgba(0, 200, 255, 0.10) 40%,
-        rgba(180, 0, 255, 0.07) 60%,
-        transparent 80%
-    );
-    mix-blend-mode: screen;
-    pointer-events: none;
-    animation: lp-glitch 6s ease-in-out infinite alternate;
+    background: #1a1a1a;
+    z-index: 1;
 }
 
-@keyframes lp-glitch {
-    0%   { opacity: 0.5; transform: translateX(0); }
-    33%  { opacity: 0.8; transform: translateX(3px) scaleX(1.002); }
-    66%  { opacity: 0.3; transform: translateX(-2px); }
-    100% { opacity: 0.7; transform: translateX(1px); }
-}
 
-.lp__noise {
-    position: absolute;
-    inset: 0;
-    background-image: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0,0,0,0.015) 2px,
-        rgba(0,0,0,0.015) 4px
-    );
-    pointer-events: none;
-}
-
-.lp__vertical-label {
-    position: absolute;
-    bottom: 80px;
-    right: 16px;
-    z-index: 8;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    opacity: 0.4;
-}
-
-.lp__vertical-text {
-    font-family: var(--lp-font-mono);
-    font-size: 8.5px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: white;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-}
-
-.lp__vertical-line {
-    width: 1px;
-    height: 40px;
-    background: rgba(255,255,255,0.5);
-} */
-
-/* ─── Right content panel ── */
-/* ─── Right content panel — now full width foreground ── */
-/* ─── Right content panel — full width, split bg trick ── */
 .lp__right {
     position: relative;
-    z-index: 1;
+    z-index: 3;
     width: 100%;
     min-height: 100vh;
     padding: 200px 40px 110px 40px;
@@ -155,23 +118,23 @@
 }
 
 /* vertical lines — inset to start at 40% so they don't draw over image */
-.lp__right::before {
+/* .lp__right::before {
     content: '';
     position: absolute;
     top: 0;
     left: 40%;
-    /* ← starts exactly where image ends */
+
     right: 0;
     bottom: 0;
     background-image: repeating-linear-gradient(to right,
             rgba(0, 0, 0, 0.06) 0px,
-            rgba(0, 0, 0, 0.04) 1px,
+            rgba(0, 0, 0, 0.04) 1.5px,
             transparent 1px,
             transparent 100%);
     background-size: 300px 100%;
     pointer-events: none;
     z-index: 1;
-}
+} */
 
 .lp__right__cont__01 {}
 
@@ -275,7 +238,7 @@
     font-family: "Sora", sans-serif;
     font-weight: 900;
     line-height: 0.9;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
     text-transform: uppercase;
     color: #171717;
     white-space: nowrap;
@@ -333,7 +296,7 @@
     font-family: "Geist", sans-serif;
     line-height: 1;
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 600px;
     color: #17171799;
     line-height: 1.65;
     text-align: left;
@@ -387,10 +350,7 @@
     white-space: nowrap;
 }
 
-.lp__cta-primary:hover {
-    transform: scale(1.02);
-    background: #222;
-}
+
 
 .lp__cta-secondary {
     background: white;
@@ -410,10 +370,7 @@
     white-space: nowrap;
 }
 
-.lp__cta-secondary:hover {
-    transform: scale(1.02);
-    border-color: rgba(0, 0, 0, 0.3);
-}
+
 
 /* ─── Mega headline (dark, sits over right panel) ── */
 .lp__headline-wrap {

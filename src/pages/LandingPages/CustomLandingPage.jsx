@@ -1,5 +1,6 @@
 import React from 'react'
 import './styles/LandingPage.css'
+import SlotText from '../../components/SlotText/SlotText'
 // image
 import people from '../../assets/images/people/people.jpg';
 import p1 from '../../assets/images/people/2.avif';
@@ -110,8 +111,8 @@ export default function CustomLandingPage() {
                     <div className='lp__ctas__ticker'>
                         {/* CTAs */}
                         <div className="lp__ctas">
-                            <button className="lp__cta-primary">Start a Project</button>
-                            <button className="lp__cta-secondary">See Our Work</button>
+                            <button className="lp__cta-primary"><SlotText text="Start a Project" /></button>
+                            <button className="lp__cta-secondary"><SlotText text="See Our Work" /></button>
                         </div>
 
                         {/* ── Logos ticker ── */}
@@ -132,17 +133,7 @@ export default function CustomLandingPage() {
 
                 </div>
 
-                {/* ── Mega headline: dark layer (right side) ── */}
-                {/* <div className="lp__headline-wrap" aria-hidden="true">
-                    <div className="lp__headline">A BOLD DIGITAL</div>
-                    <div className="lp__headline lp__headline--line2">VISION</div>
-                </div>
-
-                <div className="lp__headline-clip" aria-hidden="true">
-                    <div className="lp__headline lp__headline--white">A BOLD DIGITAL</div>
-                    <div className="lp__headline lp__headline--white lp__headline--line2">VISION</div>
-                </div> */}
-
+          
 
             </section>
 
