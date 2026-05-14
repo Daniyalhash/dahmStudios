@@ -274,7 +274,6 @@
 .lp__title {
     font-family: "Sora", sans-serif;
     font-weight: 900;
-    font-size: 128px;
     line-height: 0.9;
     letter-spacing: -0.03em;
     text-transform: uppercase;
@@ -288,6 +287,7 @@
     text-align: left;
     opacity: 0;
     animation: lp-fadeUp 0.75s var(--lp-ease) 0.3s forwards;
+
 }
 
 .lp__title-container {
@@ -298,10 +298,9 @@
 
 .lp__title-sub {
     font-family: var(--lp-font-heading);
-    font-size: 64px;
-    font-weight: 900;
+    font-weight: 600;
     line-height: 1;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.07em;
     text-transform: uppercase;
     color: #171717;
 
@@ -641,33 +640,19 @@
 @media (max-width: 1480px) {
 
 
-    .lp__title {
-
-        font-size: 120px;
-        text-align: center;
-
-    }
-
+ 
 
 
 }
 
 @media (max-width: 1280px) {
 
-    .lp__title {
-
-        font-size: 105px;
-        text-align: center;
-
-    }
+    
 
     .lp__title-block-sub {
         margin-left: 50%
     }
 
-    .lp__title-sub {
-        font-size: 54px;
-    }
 
 }
 
@@ -679,16 +664,7 @@
         justify-content: flex-start;
     }
 
-    .lp__title {
 
-        font-size: 84px;
-        text-align: center;
-
-    }
-
-    .lp__title-sub {
-        font-size: 44px;
-    }
 
     .lp__body {
         font-size: 20px;
@@ -726,16 +702,9 @@
         font-size: 14px;
     }
 
-    .lp__title {
+    
 
-        font-size: 75px;
-        text-align: center;
-
-    }
-
-    .lp__title-sub {
-        font-size: 40px;
-    }
+   
 }
 
 @media (max-width: 830px) {
@@ -750,16 +719,9 @@
         padding: 46px 0 0;
     }
 
-    .lp__title {
+   
 
-        font-size: 67px;
-        text-align: center;
-
-    }
-
-    .lp__title-sub {
-        font-size: 35px;
-    }
+   
 }
 
 @media (max-width: 770px) {
@@ -814,16 +776,7 @@
         width: 100%;
     }
 
-    .lp__title {
 
-        font-size: 64px;
-        text-align: center;
-
-    }
-
-    .lp__title-sub {
-        font-size: 30px;
-    }
 
     .lp__body {
         font-size: 16px;
@@ -868,20 +821,8 @@
         min-height: 600px;
     }
 
-    .lp__title {
-
-        font-size: 44px;
-        text-align: center;
-
-    }
-
-    .lp__title-block-sub {
-        width: 70%;
-    }
-
-    .lp__title-sub {
-        font-size: 25px;
-    }
+  
+    
 
     .lp__ctas {
         gap: 3px;
@@ -933,24 +874,17 @@
         min-height: 600px;
     }
 
-    .lp__title {
+  
 
-        font-size: 34px;
-        text-align: center;
-
-    }
-
-    .lp__title-block-sub {
-        width: 80%;
-    }
+    
 
     .lp__body {
         line-height: 130%;
 
     }
-
-    .lp__title-sub {
-        font-size: 25px;
+    
+    .lp__title-block-sub {
+        width: 70%;
     }
     .lp__ticker {
         position: relative;
@@ -994,18 +928,16 @@
     }
 
     .lp__title-block-sub {
-        width: 80%;
+        width: 70%;
     }
+   
 
     .lp__body {
         line-height: 130%;
 
     }
 
-    .lp__title-sub {
-        font-size: 20px;
-        letter-spacing: 0;
-    }
+    
 .lp__ticker {
         position: relative;
         overflow: hidden;
@@ -1032,26 +964,48 @@
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 350px) {
     .lp__hero {
         grid-template-columns: 1fr;
         height: auto;
         min-height: 600px;
     }
 
-    .lp__title {
-
-        font-size: 29px;
-        text-align: center;
-
-    }
+   
 
     .lp__title-block-sub {
+        width: 70%;
+    }
+    .lp__title-block-sub__p{
         width: 100%;
     }
-
     .lp__body {
         line-height: 130%;
-
+        width: 80%;
     }
+    .lp__ticker {
+        position: relative;
+        overflow: hidden;
+        z-index: 8;
+        opacity: 0;
+        animation: lp-fadeIn 0.5s ease 1.3s forwards;
+        max-width: 200px;
+
+        /* ← smoky tunnel fade on both edges */
+        mask-image: linear-gradient(to right,
+                transparent 0%,
+                rgba(0, 0, 0, 0.6) 8%,
+                black 20%,
+                black 80%,
+                rgba(0, 0, 0, 0.6) 92%,
+                transparent 100%);
+        -webkit-mask-image: linear-gradient(to right,
+                transparent 0%,
+                rgba(0, 0, 0, 0.6) 8%,
+                black 20%,
+                black 80%,
+                rgba(0, 0, 0, 0.6) 92%,
+                transparent 100%);
+    }
+
 }

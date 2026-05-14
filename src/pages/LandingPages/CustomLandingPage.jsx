@@ -47,7 +47,7 @@ export default function CustomLandingPage() {
 
                     {/* grain only over right bg area */}
                     <div className="lp__grain-wrapper">
-                        <GrainCanvas opacity={0.05} speed={1} />
+                        <GrainCanvas opacity={0.04} speed={.9} />
                     </div>
                     <div className='lp__right__cont__01'>
                         <div className="lp__reviews">
@@ -83,17 +83,26 @@ export default function CustomLandingPage() {
                         <div className="lp__title-block">
                             <FitText2
                                 text="A clear design plan"
-                                textClassName="lp__title"
                                 as="h1"
+                                className="lp__title"
                             />
                         </div>
 
                         {/* Body */}
                         <div className='lp__title-block-sub'>
-                            <p className="lp__title-sub">For Your business</p>
-                            <p className="lp__body">
-                                We craft digital experiences that cut through the noise
-                                strategy, design & code, <strong>without compromise.</strong></p>
+
+                            <FitText2
+                                text="For Your Business"
+                                as="p"
+                                className="lp__title-sub"
+                                minFontSize={18}
+                            />
+                            <div className='lp__title-block-sub__p'>
+                                <p className="lp__body">
+                                    We craft digital experiences that cut through the noise
+                                    strategy, design & code, <strong>without compromise.</strong></p>
+                            </div>
+
                         </div>
                     </div>
 

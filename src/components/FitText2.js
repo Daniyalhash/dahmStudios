@@ -1,61 +1,59 @@
 import { useEffect, useRef } from "react";
 
 export default function FitText2({ 
-    text, 
-    className,
-    containerClassName = "navbar__card-email-container",
-    textClassName = "navbar__card-email",
-    as: Tag = "h1"
+  text, 
+  as: Tag = "h1", 
+  className = "",
+  minFontSize = 1,   // ← add this
+  maxFontSize = 1000 // ← and this
 }) {
-    const containerRef = useRef(null);
-    const textRef = useRef(null);
+  const containerRef = useRef(null);
+  const textRef = useRef(null);
+  const rafRef = useRef(null);
 
-    useEffect(() => {
-        function fit() {
-            const container = containerRef.current;
-            const el = textRef.current;
-            if (!container || !el) return;
+  useEffect(() => {
+    const container = containerRef.current;
+    const el = textRef.current;
+    if (!container || !el) return;
 
-            // temporarily make visible to measure correctly
-            const prevVisibility = el.style.visibility;
-            const prevOpacity = el.style.opacity;
-            el.style.visibility = 'hidden';
-            el.style.opacity = '0';
+    function fit() {
+      const maxW = container.offsetWidth;
+      if (!maxW) return;
 
-            // reset scale before measuring
-            el.style.transform = 'scaleX(1)';
+      let lo = minFontSize, hi = maxFontSize, best = lo;
+      while (lo <= hi) {
+        const mid = (lo + hi) >> 1;
+        el.style.fontSize = mid + "px";
+        if (el.scrollWidth <= maxW) { best = mid; lo = mid + 1; }
+        else { hi = mid - 1; }
+      }
+      el.style.fontSize = best + "px";
+    }
 
-            const containerW = container.offsetWidth;
-            const textW = el.scrollWidth;
+    function onResize() {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(fit);
+    }
 
-            el.style.visibility = prevVisibility;
-            el.style.opacity = prevOpacity;
+    const ro = new ResizeObserver(onResize);
+    ro.observe(container);
+    fit();
 
-            if (containerW > 0 && textW > containerW) {
-                el.style.transform = `scaleX(${containerW / textW})`;
-            } else {
-                el.style.transform = 'scaleX(1)';
-            }
-        }
+    return () => {
+      ro.disconnect();
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, [text, minFontSize, maxFontSize]);
 
-        // run immediately + after animation delay
-        fit();
-        const t1 = setTimeout(fit, 100);
-        const t2 = setTimeout(fit, 500);  // ← catches after lp-fadeUp finishes
-
-        window.addEventListener('resize', fit);
-        return () => {
-            clearTimeout(t1);
-            clearTimeout(t2);
-            window.removeEventListener('resize', fit);
-        };
-    }, [text]);
-
-    return (
-        <div ref={containerRef} className={containerClassName}>
-            <Tag ref={textRef} className={`${textClassName} ${className || ''}`}>
-                {text}
-            </Tag>
-        </div>
-    );
+  return (
+    <div ref={containerRef} style={{ width: "100%", overflow: "hidden" }}>
+      <Tag
+        ref={textRef}
+        className={className}
+        style={{ whiteSpace: "nowrap", display: "block", width: "max-content" }}
+      >
+        {text}
+      </Tag>
+    </div>
+  );
 }

@@ -23,6 +23,7 @@
     line-height: 1;
     padding: 0;
     margin: 0;
+
 }
 
 /* ── Size variants ─────────────────────────────────── */
@@ -95,6 +96,7 @@
     align-items: baseline;
     margin: 0;
     padding: 0;
+
 }
 
 /* ── Letter parts ──────────────────────────────────── */
@@ -126,7 +128,7 @@
 .logo__period {
     display: inline-block;
     /* period stays at baseline naturally */
-    margin-left: 0.01em;
+    margin-left: var(--dot--margin);
 }
 
 
@@ -140,7 +142,8 @@
     --logo-sub-gap: -2px;
       --logo--gap--a: -0.05em;
     --logo--gap--d: -0.05em;
-        --logo--gap--hm: -0.05em
+        --logo--gap--hm: -0.05em;
+         --dot--margin: 0.08em;
 
 }
 
@@ -148,11 +151,12 @@
 .logo__root.logo--sm {
     --logo-base-size: 35px;
     --logo-sub-size: 7px;
-    --logo-sub-left: 76px;
-    --logo-sub-gap: -3px;
+    --logo-sub-left: 79px;
+    --logo-sub-gap: -5px;
     --logo--gap--a: -0.08em;
     --logo--gap--d: -0.02em;
-    --logo--gap--hm: -0.01em
+    --logo--gap--hm: -0.01em;
+    --dot--margin: 0.04em;
 }
 
 /* md — general / footer */
