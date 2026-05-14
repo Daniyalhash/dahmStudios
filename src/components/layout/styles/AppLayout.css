@@ -1,0 +1,18 @@
+/* ─── App shell ───────────────────────────────────── */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+  Pages with a full-bleed hero (e.g. HeroPage) should NOT
+  use this class — they sit directly under the fixed navbar.
+
+  Regular content pages wrap their content in:
+  <div className="app-content"> ... </div>
+  which clears the navbar height (72px bar + 44px nav = 116px).
+*/
+.app-content {
+  flex: 1;
+}

@@ -1,0 +1,181 @@
+/* ═══════════════════════════════════════════════════════
+   Logo Component — dahm. studios
+   Reusable: navbar (sm), hero (lg), footer (md)
+   ═══════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Angkor&family=Honk:MORF@15&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+
+/* ── Size scale tokens ─────────────────────────────── */
+/* controlled via --logo-scale prop or size variants   */
+.logo__root {
+    --logo-color: #0a0a0a;
+    --logo-scale: 1;
+
+    --logo-base-size: 72px;
+    --logo-sub-size: 13px;
+
+    display: inline-flex;
+    align-items: flex-end;
+    position: relative;
+    text-decoration: none;
+    user-select: none;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+}
+
+/* ── Size variants ─────────────────────────────────── */
+.logo__root.logo--sm {
+    --logo-base-size: 35px;
+    --logo-sub-size: 10px;
+}
+
+.logo__root.logo--md {
+    --logo-base-size: 80px;
+    --logo-sub-size: 14px;
+}
+
+.logo__root.logo--lg {
+    --logo-base-size: 140px;
+    --logo-sub-size: 22px;
+}
+
+.logo__root.logo--xl {
+    --logo-base-size: 200px;
+    --logo-sub-size: 30px;
+}
+
+/* ── Colour variants ───────────────────────────────── */
+.logo__root.logo--white {
+    --logo-color: #f5f5f5;
+}
+
+.logo__root.logo--blue {
+    --logo-color: #1a1aff;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Inner layout: word-wrap holds both "studios" label
+   and the main wordmark stacked
+   ═══════════════════════════════════════════════════════ */
+.logo__word-group {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    line-height: 1;
+}
+
+/* ── "studios" label ───────────────────────────────── */
+.logo__sub {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-size: var(--logo-sub-size);
+    color: var(--logo-color);
+    letter-spacing: 0.01em;
+    line-height: 1;
+    margin-bottom: var(--logo-sub-gap);
+    padding-left: var(--logo-sub-left);
+    /* ← token, not calc() */
+    opacity: 0.9;
+    display: block;
+}
+
+/* ── Main wordmark ─────────────────────────────────── */
+.logo__wordmark {
+    font-family: "Angkor", serif;
+    font-weight: 400;
+    font-size: calc(var(--logo-base-size) * var(--logo-scale));
+    color: var(--logo-color);
+    letter-spacing: -0.04em;
+    line-height: 0.88;
+    display: flex;
+    align-items: baseline;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── Letter parts ──────────────────────────────────── */
+
+/* "D" — first capital, sits flush left */
+.logo__letter-D {
+    display: inline-block;
+    letter-spacing: var(--logo--gap--d);
+
+    /* slight negative margin pulls "a" snug under the curve */
+}
+
+/* "a" — flipped/mirrored like the image's inner-curve "h" arch */
+.logo__letter-a {
+    display: inline-block;
+    transform: rotate(-8deg);
+    letter-spacing: var(--logo--gap--a);
+    transform-origin: bottom center;
+}
+
+/* "hm" */
+.logo__letter-hm {
+    display: inline-block;
+        letter-spacing: var(--logo--gap--hm);
+
+}
+
+/* Period — full-stop, same weight, slightly raised */
+.logo__period {
+    display: inline-block;
+    /* period stays at baseline naturally */
+    margin-left: 0.01em;
+}
+
+
+/* ── Size variants ─────────────────────────────────── */
+
+/* xs — menu card logo */
+.logo__root.logo--xs {
+    --logo-base-size: 20px;
+    --logo-sub-size: 6px;
+    --logo-sub-left: 44px;
+    --logo-sub-gap: -2px;
+      --logo--gap--a: -0.05em;
+    --logo--gap--d: -0.05em;
+        --logo--gap--hm: -0.05em
+
+}
+
+/* sm — navbar */
+.logo__root.logo--sm {
+    --logo-base-size: 35px;
+    --logo-sub-size: 7px;
+    --logo-sub-left: 76px;
+    --logo-sub-gap: -3px;
+    --logo--gap--a: -0.08em;
+    --logo--gap--d: -0.02em;
+    --logo--gap--hm: -0.01em
+}
+
+/* md — general / footer */
+.logo__root.logo--md {
+    --logo-base-size: 80px;
+    --logo-sub-size: 9px;
+    --logo-sub-left: 174px;
+    --logo-sub-gap: -4px;
+}
+
+/* lg — hero */
+.logo__root.logo--lg {
+    --logo-base-size: 140px;
+    --logo-sub-size: 13px;
+    --logo-sub-left: 304px;
+    --logo-sub-gap: -5px;
+}
+
+/* xl — display / poster */
+.logo__root.logo--xl {
+    --logo-base-size: 200px;
+    --logo-sub-size: 17px;
+    --logo-sub-left: 434px;
+    --logo-sub-gap: -7px;
+}
+

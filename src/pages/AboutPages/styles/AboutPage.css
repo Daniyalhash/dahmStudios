@@ -1,0 +1,8 @@
+.AboutPage{
+    height: 100vh;
+    background-color: #fff;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
