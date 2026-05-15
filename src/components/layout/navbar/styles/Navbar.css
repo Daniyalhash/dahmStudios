@@ -29,7 +29,30 @@
     pointer-events: none;
 
 }
+/* .navbar__root {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 
+    width: 100%;
+    max-width: 100vw;
+
+    z-index: 200;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: clamp(14px, 2vw, 30px);
+
+    background-color: transparent;
+
+    overflow: hidden;
+    box-sizing: border-box;
+
+    pointer-events: none;
+} */
 .navbar__root>* {
     pointer-events: all;
 }
@@ -126,15 +149,13 @@
     inset: 0;
     background-image: repeating-linear-gradient(to right,
             rgba(255, 255, 255, 0.04) 0px,
-            rgba(255, 255, 255, 0.04) 1px,
+            rgba(255, 255, 255, 0.04) 1.5px,
             transparent 1px,
             transparent 100%);
-    background-size: 90px 100%;
-    /* ← controls spacing between lines */
+    background-size: 20% 100%;  /* 100% / 5 = 20% → exactly 5 columns */
     pointer-events: none;
     z-index: 1;
 }
-
 /*  */
 .navbar__menu-card.is-open {
     opacity: 1;

@@ -46,14 +46,13 @@
     position: absolute;
     inset: 0;
     background-image: repeating-linear-gradient(to right,
-            rgba(2, 2, 2, 0.04) 0px,
-            rgba(0, 0, 0, 0.04) 2px,
+            rgba(0, 0, 0, 0.04) 0px,
+            rgba(0, 0, 0, 0.04) 1.5px,
             transparent 1px,
             transparent 100%);
-    background-size: 300px 100%;
-    /* ← controls spacing between lines */
+    background-size: 20% 100%;  /* 100% / 5 = 20% → exactly 5 columns */
     pointer-events: none;
-    z-index: 4;
+    z-index: 5;
 }
 /* ─── Left image panel ── */
 /* ─── Left image panel — now true background ── */

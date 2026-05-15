@@ -3,6 +3,12 @@ import './styles/AboutSection.css'
 // imgaes
 import people from '../../assets/images/people/people.jpg';
 import people2 from '../../assets/images/projectImages/6.avif';
+import img1 from '../../assets/images/services/2.avif';
+import img2 from '../../assets/images/services/3.avif';
+import img3 from '../../assets/images/services/4.avif';
+import img4 from '../../assets/images/services/5.avif';
+import CustomLogo from '../../components/CustomLogo/CustomLogo';
+
 
 import GrainCanvas from "../../components/GrainCanvas";
 import { Play } from "lucide-react";
@@ -78,7 +84,7 @@ export default function AboutSection() {
                                     className=""
                                 />
                                 <button className="about__play-btn" aria-label="Play video">
-                                    <Play className="about__play-btn__icon"  />
+                                    <Play className="about__play-btn__icon" />
                                 </button>
                             </div>
                         </div>
@@ -121,6 +127,137 @@ export default function AboutSection() {
                             <div className="about__author-avatar__info">
                                 <p className="about__author-name">Jessica Burns</p>
                                 <p className="about__author-role">Client Success Manager</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            {/* new section */}
+            {/* ── Services list ── */}
+            <div className="abtSvc__wrap">
+                {/* ── About Hero Intro ── */}
+                <div className="abtHero__wrap">
+
+                    {/* Left — big scroll text */}
+                    <div className="abtHero__left">
+                        <div className="about__tag">
+                            <div className="about__tag__info">
+                                <span className="about__tag-dot" />
+                                <span className="about__tag-num">02</span>
+                            </div>
+
+                            <span className="about__tag-label">services</span>
+                        </div>
+                        <div>
+                            <h2 className="abtHero__big-text">
+                                turning repetitive work into <strong>time-saving systems</strong>
+                            </h2>
+                        </div>
+
+                    </div>
+
+                    {/* Right — desc + CTA + badge */}
+                    <div className="abtHero__right">
+                        <div className="abtHero__right-top">
+                            <p className="abtHero__desc">
+                                <strong>We provide practical AI consulting and automation services for companies that
+                                    want results —{" "}
+                                    not just theory.</strong> Our work is tailored, transparent, and focused on
+                                the areas of your business where AI makes a real impact.
+                            </p>
+                            <div className="abtHero__desc__02">
+                                <a href="/about" className="abtHero__cta">
+                                    About Us
+                                </a>
+                                <div className="abtHero__badge">
+                                    <CustomLogo color="white" size='xs' href="/" />
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div>
+                    {/* Row 01 */}
+                    <div className="abtSvc__row">
+                        <span className="abtSvc__index">/01</span>
+                        <h3 className="abtSvc__title">AI Consulting<br />&amp; Strategy</h3>
+                        <div className="abtSvc__img-wrap">
+                            <img src={img1} alt="AI Consulting" />
+                        </div>
+                        <div className="abtSvc__desc-col">
+                            <p className="abtSvc__desc">
+                                Whether you're just exploring possibilities or looking to scale existing
+                                tools, we build a clear plan that aligns with your goals.
+                            </p>
+                            <div className="abtSvc__tags">
+                                <span className="abtSvc__tag">aiconsulting</span>
+                                <span className="abtSvc__tag">businessautomation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Row 02 */}
+                    <div className="abtSvc__row">
+                        <span className="abtSvc__index">/02</span>
+                        <h3 className="abtSvc__title">Workflow<br />Automation</h3>
+                        <div className="abtSvc__img-wrap">
+                            <img src={img2} alt="Workflow Automation" />
+                        </div>
+                        <div className="abtSvc__desc-col">
+                            <p className="abtSvc__desc">
+                                We design and deploy automation systems that take repetitive tasks off
+                                your plate — from handling emails and reports to streamlining admin
+                                and customer service processes.
+                            </p>
+                            <div className="abtSvc__tags">
+                                <span className="abtSvc__tag">savetime</span>
+                                <span className="abtSvc__tag">worksmarter</span>
+                                <span className="abtSvc__tag">nomoremanualnwork</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Row 03 */}
+                    <div className="abtSvc__row">
+                        <span className="abtSvc__index">/03</span>
+                        <h3 className="abtSvc__title">Custom AI Tools<br />&amp; Integrations</h3>
+                        <div className="abtSvc__img-wrap">
+                            <img src={img3} alt="Custom AI Tools" />
+                        </div>
+                        <div className="abtSvc__desc-col">
+                            <p className="abtSvc__desc">
+                                Need something more specific? We develop lightweight AI solutions
+                                tailored to your operations — from data analysis tools to smart
+                                assistants.
+                            </p>
+                            <div className="abtSvc__tags">
+                                <span className="abtSvc__tag">aitools</span>
+                                <span className="abtSvc__tag">tailoredtech</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Row 04 */}
+                    <div className="abtSvc__row">
+                        <span className="abtSvc__index">/04</span>
+                        <h3 className="abtSvc__title">Team Onboarding<br />&amp; Training</h3>
+                        <div className="abtSvc__img-wrap">
+                            <img src={img4} alt="Team Training" />
+                        </div>
+                        <div className="abtSvc__desc-col">
+                            <p className="abtSvc__desc">
+                                AI only works when your team knows how to use it. We offer simple
+                                onboarding, documentation, and ongoing support to make sure everyone
+                                feels confident — even without a technical background.
+                            </p>
+                            <div className="abtSvc__tags">
+                                <span className="abtSvc__tag">aitraining</span>
                             </div>
                         </div>
                     </div>
