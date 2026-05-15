@@ -21,19 +21,18 @@
     background-image: repeating-linear-gradient(
         to right,
         rgba(255,255,255,0.06) 0px,
-        rgba(255,255,255,0.06) 1px,
+        rgba(255,255,255,0.06) 2px,
         transparent 1px,
         transparent 300px
     );
 
     background-size: 300px 100%;
 
-    /* IMPORTANT */
-    background-position-x: calc(40%);
-
+    
     pointer-events: none;
     z-index: 1;
 }
+/*  */
 
 /* grain wrapper */
 .showcase_01__grain-wrapper {
@@ -241,6 +240,7 @@
     cursor: grabbing;
     user-select: none;
 }
+/* ------------------- */
 
 /* ─── Responsive ── */
 @media (max-width: 770px) {

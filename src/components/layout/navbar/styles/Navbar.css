@@ -314,7 +314,7 @@
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid var(--navbar-bg);
-    background: red;
+    background: #000;
     flex-shrink: 0;
     z-index: 2;
 }
@@ -367,7 +367,48 @@
     transform: rotate(90deg);
     background: #2a2a2a;
 }
+/* ------------------------------ */
+/* default dark theme — black text */
+/* faster transition */
+.navbar__menu-toggle,
+.navbar__plus-btn,
+.navbar__cta-label,
+.slot-char-bot,
+.slot-char-top {
+    transition: color 0.15s ease, background 0.15s ease;  /* ← was 0.3s */
+}
 
+/* also transition the logo color */
+.logo__root {
+    transition: --logo-color 0.15s ease;
+}
+/* light theme — white text (on dark sections) */
+.navbar--light .navbar__menu-toggle { color: #f5f5f5; }
+.navbar--light .navbar__menu-toggle svg { stroke: #f5f5f5; }
+.navbar--light .slot-char-bot,
+.navbar--light .slot-char-top      { color: #f5f5f5; }
+.navbar--light .navbar__cta-label  { color: rgba(255,255,255,0.5); }
+.navbar--light .navbar__cta-label strong { color: #fff; }
+.navbar--light .navbar__plus-btn   { background: #f5f5f5; color: #000; }
+.navbar--light .navbar__avatar__poeple { border-color: rgba(0, 0, 0, 0.2); }
+
+/* smooth transition between themes */
+.navbar__menu-toggle,
+.navbar__plus-btn,
+.navbar__cta-label {
+    transition: color 0.3s ease, background 0.3s ease;
+}
+.navbar__menu-wrapper {
+    /* subtle bg so content behind doesn't bleed through */
+    background: transparent;
+}
+
+/* optional: frosted pill behind menu button */
+.navbar__menu-toggle {
+    background: transparent;
+    /* remove any backdrop-filter if present */
+    backdrop-filter: none;
+}
 /* ─── Responsive ──────────────────────────────────────── */
 @media (max-width: 1025px) {
 

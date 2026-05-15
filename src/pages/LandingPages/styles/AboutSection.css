@@ -1,0 +1,669 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap');
+
+.about__root {
+    width: 100%;
+    min-height: 100vh;
+    /* ← no more 500vh */
+    background: #171717;
+    position: relative;
+    padding: 240px 40px 180px;
+}
+
+.about__root::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(to right,
+            rgba(255, 255, 255, 0.04) 0px,
+            rgba(0, 0, 0, 0.04) 2px,
+            transparent 1px,
+            transparent 100%);
+    background-size: 300px 100%;
+    /* ← controls spacing between lines */
+    pointer-events: none;
+    z-index: 1;
+}
+
+.about__sticky {
+    position: relative;
+    /* ← no more sticky */
+    top: unset;
+    height: auto;
+    /* ← no more 100vh */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    overflow: visible;
+}
+
+.aboutSection__grain-wrapper {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* ─── Left ── */
+.about__left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.about__video-card {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 22px 9px 9px;
+    z-index: 2;
+    border: 1px solid #ffffff12;
+
+}
+
+.about__video-card-01 {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    max-width: 340px;
+}
+
+.about__video-card__part1 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+}
+
+.about__video-card__part1__time {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 0 35px;
+}
+
+
+.about__video-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #f5f5f5;
+}
+
+.about__video-card__part1__time__duration {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    justify-content: space-between;
+    gap: 4px;
+}
+
+.about__tag-dot-grey {
+    width: 6px;
+    height: 6px;
+    opacity: .2;
+    border-radius: 50%;
+    background: #f5f5f5;
+    flex-shrink: 0;
+}
+
+.about__video-duration {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: -0.02em;
+    line-height: 140%;
+    color: #f5f5f5;
+
+
+}
+
+.about__video-title {
+    font-family: "Sora", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: -.05em;
+    line-height: 110%;
+    margin: 0;
+}
+
+
+
+.about__video-thumb {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #1a1a1a;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.about__video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about__play-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #ffffff66;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 4;
+    position: absolute;
+    backdrop-filter: blur(5.05px);
+    transition: background 0.2s ease;
+}
+
+.about__play-btn__icon {
+    color: #fff;
+
+    width: 30px;
+    height: 30px;
+}
+
+.about__play-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.about__video-caption {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    color: #f5f5f599;
+    line-height: 135%;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    text-align: right;
+}
+
+.about__video-caption strong {
+    color: #fff;
+    font-weight: 500;
+}
+
+/* ─── Right ── */
+.about__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    gap: 34px;
+}
+
+.about__tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.about__tag__info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.about__tag-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    flex-shrink: 0;
+}
+
+.about__tag-num {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    color: #f5f5f5;
+    letter-spacing: -.04em;
+    line-height: 130%;
+}
+
+.about__tag-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: -.04em;
+    line-height: 130%
+}
+
+.about__tag__sub {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    flex-direction: column;
+}
+
+/* ─── The scroll-reveal text ── */
+.about__big-text {
+    font-family: "Sora", sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 700;
+    line-height: .95;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+
+    /* start fully dark */
+    background-image: linear-gradient(to bottom, #444 0%, #444 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    margin: 0;
+}
+
+/* ─── Author ── */
+.about__author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.about__author-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #333;
+    flex-shrink: 0;
+}
+
+.about__author-avatar__sub {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+
+}
+
+.about__author-avatar__info {
+    display: flex;
+    align-items: flex-start;
+    gap: 3px;
+    flex-direction: column;
+}
+
+.about__author-name {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: #f5f5f5;
+    text-transform: uppercase;
+    letter-spacing: -.04em;
+    margin: 0;
+}
+
+.about__author-role {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    color: #f5f5f599;
+    text-transform: uppercase;
+    letter-spacing: -.04em;
+    margin: 0;
+}
+
+/* ─── Responsive ── */
+@media (max-width: 1024px) {
+    .about__root {
+        padding: 160px 30px;
+
+    }
+
+    .about__video-card-01 {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        margin-right: 00px;
+
+        max-width: 250px;
+
+    }
+
+    .about__sticky {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    /* left section */
+    .about__video-thumb {
+        height: 150px;
+    }
+
+    .about__video-caption,
+    .about__video-label {
+        font-size: 12px;
+    }
+
+    .about__video-title {
+        font-size: 16px;
+    }
+
+    .about__play-btn {
+        height: 60px;
+        width: 60px;
+    }
+
+    .about__play-btn__icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* right section */
+    .about__tag-label,
+    .about__author-name,
+    .about__author-role,
+    .about__tag-num {
+        font-size: 12px;
+    }
+
+    .about__right {
+        gap: 30px;
+    }
+
+    .about__tag__sub {
+        gap: 50px;
+    }
+
+    .about__big-text {
+        font-size: 50px;
+        font-weight: 700;
+        letter-spacing: -3px;
+    }
+}
+
+
+@media (max-width: 912px) {
+    .about__video-card-01 {
+        max-width: 220px;
+    }
+
+    .about__video-thumb {
+        height: 120px;
+
+    }
+
+    .about__video-duration {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 830px) {
+    .about__video-card-01 {
+        max-width: 200px;
+    }
+
+    .about__video-thumb {
+        height: 120px;
+
+    }
+
+    .about__play-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .about__video-duration {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about__sticky {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .about__root {
+        height: auto;
+        min-height: 200vh;
+        padding: 20px 20px 50px;
+    }
+
+    .about__video-card-01 {
+        max-width: 100%;
+    }
+
+    .about__left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+ 
+    .about__video-thumb {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+
+    /* control height responsively */
+    aspect-ratio: 16 / 10;
+
+    /* optional */
+    min-height: 250px;
+    max-height: 450px;
+}
+   .about__video-thumb {
+        aspect-ratio: 4 / 3;
+        max-height: 420px;
+    }
+    .about__video-card {
+        padding: 34px 9px 9px;
+    }
+
+    .about__video-title {
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .about__video-card__part1__time {
+        padding: 0 0 18px;
+    }
+
+    .about__video-card-01 {
+        gap: 34px;
+        border: 1px solid #ffffff12;
+        padding: 0 0 40px;
+
+    }
+    .about__sticky{
+        gap: 40px;
+    }
+    .about__right{
+        gap: 16px;
+    }
+    .about__big-text{
+        font-size: 35px;
+        letter-spacing: -2px;
+    }
+    .about__right{
+                border: 1px solid #ffffff12;
+
+    }
+    .about__tag__sub{
+
+        gap: 28px;
+        padding: 0 0 40px;
+    }
+    .about__video-caption{
+        text-align: left;
+    }
+}
+@media (max-width: 540px) {
+    .about__sticky {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: 100vh;
+    }
+    .about__play-btn{
+        width: 80px;
+        height: 80px;
+    }
+    .about__play-btn__icon{
+        width: 30px;
+        height: 30px;
+    }
+    .about__root {
+        height: auto;
+        min-height: 200vh;
+        padding: 20px 20px 50px;
+    }
+
+    .about__video-card-01 {
+        max-width: 100%;
+    }
+
+    .about__left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    
+    .about__video-thumb {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+
+    /* control height responsively */
+    aspect-ratio: 16 / 10;
+
+    /* optional */
+    min-height: 250px;
+    max-height: 450px;
+}
+   .about__video-thumb {
+        aspect-ratio: 4 / 3;
+        max-height: 420px;
+    }
+    .about__video-card {
+        padding: 34px 9px 9px;
+    }
+
+    
+
+    .about__video-card__part1__time {
+        padding: 0 0 18px;
+    }
+
+    .about__video-card-01 {
+        gap: 34px;
+        border: 1px solid #ffffff12;
+        padding: 0 0 40px;
+
+    }
+    .about__sticky{
+        gap: 40px;
+    }
+    .about__right{
+        gap: 16px;
+    }
+    .about__big-text{
+        font-size: 35px;
+        letter-spacing: -2px;
+    }
+    .about__right{
+                border: 1px solid #ffffff12;
+
+    }
+    .about__tag__sub{
+
+        gap: 28px;
+        padding: 0 0 40px;
+    }
+    .about__video-caption{
+        text-align: left;
+    }
+}
+@media (max-width: 450px) {
+    .about__sticky {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: 100vh;
+    }
+    .about__play-btn{
+        width: 80px;
+        height: 80px;
+    }
+    .about__play-btn__icon{
+        width: 30px;
+        height: 30px;
+    }
+    .about__root {
+        height: auto;
+        min-height: 200vh;
+        padding: 20px 20px 50px;
+    }
+
+    .about__video-card-01 {
+        max-width: 100%;
+    }
+
+    .about__left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .about__video-card {
+        padding: 34px 9px 9px;
+    }
+
+    
+
+    .about__video-card__part1__time {
+        padding: 0 0 18px;
+    }
+
+    .about__video-card-01 {
+        gap: 34px;
+        border: 1px solid #ffffff12;
+        padding: 0 0 40px;
+
+    }
+    .about__sticky{
+        gap: 40px;
+    }
+    .about__right{
+        gap: 16px;
+    }
+    .about__big-text{
+        font-size: 35px;
+        letter-spacing: -2px;
+    }
+    .about__right{
+                border: 1px solid #ffffff12;
+
+    }
+    .about__tag__sub{
+
+        gap: 28px;
+        padding: 0 0 40px;
+    }
+    .about__video-caption{
+        text-align: left;
+    }
+}

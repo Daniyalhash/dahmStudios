@@ -30,7 +30,7 @@ const projects = [
     {
         id: 3,
         title: "Trade Dashboard",
-        
+
         size: "md",
         accent: "#0a1f0a",
         image: A,
@@ -39,7 +39,7 @@ const projects = [
     {
         id: 3,
         title: "Trade Dashboard",
-        
+
         size: "md",
         accent: "#0a1f0a",
         image: B,
@@ -48,7 +48,7 @@ const projects = [
     {
         id: 3,
         title: "Trade Dashboard",
-        
+
         size: "md",
         accent: "#0a1f0a",
         image: C,
@@ -57,7 +57,7 @@ const projects = [
     {
         id: 3,
         title: "Trade Dashboard",
-       
+
         size: "md",
         accent: "#0a1f0a",
         image: E,
@@ -66,7 +66,7 @@ const projects = [
     {
         id: 4,
         title: "Layers",
-        
+
         size: "xl",
         accent: "#1a0a2e",
         image: D,
@@ -92,7 +92,7 @@ export default function Showcase01() {
             <div className="showcase_01__grain-wrapper">
                 <GrainCanvas opacity={0.04} speed={.9} />
             </div>
-            {/* Header */}
+           
             {/* <div className="showcase_01__header">
                 <p className="showcase_01__label">Selected Work</p>
                 <div className="showcase_01__header-right">
@@ -114,8 +114,8 @@ export default function Showcase01() {
                                 ) : (
                                     <div className="showcase_01__card-img-placeholder" />
                                 )}
-                                
-                            
+
+
                             </div>
 
                             <div className="showcase_01__card-footer">

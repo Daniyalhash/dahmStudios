@@ -21,7 +21,29 @@ export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const wrapperRef = useRef(null);
     const [isMobileLogo, setIsMobileLogo] = useState(window.innerWidth < 800)
+    const [navTheme, setNavTheme] = useState('dark'); // dark = black text, light = white text
 
+    useEffect(() => {
+        function updateTheme() {
+            const navH = 80;
+            const sections = document.querySelectorAll('[data-navbar-theme]');
+
+            let currentTheme = 'dark';
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                // if navbar midpoint is inside this section
+                if (rect.top <= navH && rect.bottom >= navH) {
+                    currentTheme = section.dataset.navbarTheme;
+                }
+            });
+
+            setNavTheme(currentTheme);
+        }
+
+        window.addEventListener('scroll', updateTheme, { passive: true });
+        updateTheme(); // run on mount
+        return () => window.removeEventListener('scroll', updateTheme);
+    }, []);
     useEffect(() => {
         const handleResize = () => {
             setIsMobileLogo(window.innerWidth < 800)
@@ -52,10 +74,10 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav className={`navbar__root${menuOpen ? " menu-is-open" : ""}`} aria-label="Main navigation">
+        <nav className={`navbar__root${menuOpen ? " menu-is-open" : ""} navbar--${navTheme}`}>
 
 
-            {
+            {/* {
                 menuOpen && window.innerWidth <= 768
                     ? (
                         <CustomLogo
@@ -71,8 +93,12 @@ export default function Navbar() {
                             href="/"
                         />
                     )
+            } */}
+            {/* Logo switches color */}
+            {menuOpen && window.innerWidth <= 768
+                ? <CustomLogo color="white" size={isMobileLogo ? "xs" : "sm"} href="/" />
+                : <CustomLogo color={navTheme === 'light' ? 'white' : 'dark'} size={isMobileLogo ? "xs" : "sm"} href="/" />
             }
-
 
 
             {/* ── Menu toggle + dropdown card ─────────────────── */}
@@ -111,7 +137,7 @@ export default function Navbar() {
                                     className="navbar__link"
                                     onClick={() => setMenuOpen(false)}
                                 >
-                                    
+
                                     <SlotText text={link.label} />
                                 </a>
                             </li>
