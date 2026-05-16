@@ -12,6 +12,65 @@ import CustomLogo from '../../components/CustomLogo/CustomLogo';
 
 import GrainCanvas from "../../components/GrainCanvas";
 import { Play } from "lucide-react";
+
+// services data
+const services = [
+    {
+        index: "/01",
+        title: (
+            <>
+                AI Consulting & Strategy
+            </>
+        ),
+        image: img1,
+        alt: "AI Consulting",
+        desc: `Whether you're just exploring possibilities or looking to scale existing
+        tools, we build a clear plan that aligns with your goals.`,
+        tags: ["aiconsulting", "businessautomation"],
+    },
+    {
+        index: "/02",
+        title: (
+            <>
+                Workflow Automation
+            </>
+        ),
+        image: img2,
+        alt: "Workflow Automation",
+        desc: `We design and deploy automation systems that take repetitive tasks off
+        your plate — from handling emails and reports to streamlining admin
+        and customer service processes.`,
+        tags: ["savetime", "worksmarter", "nomoremanualwork"],
+    },
+    {
+        index: "/03",
+        title: (
+            <>
+                Custom AI Tools & Integrations
+            </>
+        ),
+        image: img3,
+        alt: "Custom AI Tools",
+        desc: `Need something more specific? We develop lightweight AI solutions
+        tailored to your operations — from data analysis tools to smart
+        assistants.`,
+        tags: ["aitools", "tailoredtech"],
+    },
+    {
+        index: "/04",
+        title: (
+            <>
+                Team Onboarding & Training
+            </>
+        ),
+        image: img4,
+        alt: "Team Training",
+        desc: `AI only works when your team knows how to use it. We offer simple
+        onboarding, documentation, and ongoing support to make sure everyone
+        feels confident — even without a technical background.`,
+        tags: ["aitraining"],
+    },
+];
 export default function AboutSection() {
     const sectionRef = useRef(null);
     const textRef = useRef(null);
@@ -183,85 +242,40 @@ export default function AboutSection() {
 
                 </div>
                 <div>
-                    {/* Row 01 */}
-                    <div className="abtSvc__row">
-                        <span className="abtSvc__index">/01</span>
-                        <h3 className="abtSvc__title">AI Consulting<br />&amp; Strategy</h3>
-                        <div className="abtSvc__img-wrap">
-                            <img src={img1} alt="AI Consulting" />
-                        </div>
-                        <div className="abtSvc__desc-col">
-                            <p className="abtSvc__desc">
-                                Whether you're just exploring possibilities or looking to scale existing
-                                tools, we build a clear plan that aligns with your goals.
-                            </p>
-                            <div className="abtSvc__tags">
-                                <span className="abtSvc__tag">aiconsulting</span>
-                                <span className="abtSvc__tag">businessautomation</span>
-                            </div>
-                        </div>
-                    </div>
+                    {services.map((service, index) => (
+                        <div className="abtSvc__row" key={index}>
+                            <div className="abtSvc__row__index">
+                                <span className="abtSvc__index">{service.index}</span>
 
-                    {/* Row 02 */}
-                    <div className="abtSvc__row">
-                        <span className="abtSvc__index">/02</span>
-                        <h3 className="abtSvc__title">Workflow<br />Automation</h3>
-                        <div className="abtSvc__img-wrap">
-                            <img src={img2} alt="Workflow Automation" />
-                        </div>
-                        <div className="abtSvc__desc-col">
-                            <p className="abtSvc__desc">
-                                We design and deploy automation systems that take repetitive tasks off
-                                your plate — from handling emails and reports to streamlining admin
-                                and customer service processes.
-                            </p>
-                            <div className="abtSvc__tags">
-                                <span className="abtSvc__tag">savetime</span>
-                                <span className="abtSvc__tag">worksmarter</span>
-                                <span className="abtSvc__tag">nomoremanualnwork</span>
                             </div>
-                        </div>
-                    </div>
-
-                    {/* Row 03 */}
-                    <div className="abtSvc__row">
-                        <span className="abtSvc__index">/03</span>
-                        <h3 className="abtSvc__title">Custom AI Tools<br />&amp; Integrations</h3>
-                        <div className="abtSvc__img-wrap">
-                            <img src={img3} alt="Custom AI Tools" />
-                        </div>
-                        <div className="abtSvc__desc-col">
-                            <p className="abtSvc__desc">
-                                Need something more specific? We develop lightweight AI solutions
-                                tailored to your operations — from data analysis tools to smart
-                                assistants.
-                            </p>
-                            <div className="abtSvc__tags">
-                                <span className="abtSvc__tag">aitools</span>
-                                <span className="abtSvc__tag">tailoredtech</span>
+                            <div className="abtSvc__row__title">
+                                <h3 className="abtSvc__title">
+                                    {service.title}
+                                </h3>
                             </div>
-                        </div>
-                    </div>
 
-                    {/* Row 04 */}
-                    <div className="abtSvc__row">
-                        <span className="abtSvc__index">/04</span>
-                        <h3 className="abtSvc__title">Team Onboarding<br />&amp; Training</h3>
-                        <div className="abtSvc__img-wrap">
-                            <img src={img4} alt="Team Training" />
-                        </div>
-                        <div className="abtSvc__desc-col">
-                            <p className="abtSvc__desc">
-                                AI only works when your team knows how to use it. We offer simple
-                                onboarding, documentation, and ongoing support to make sure everyone
-                                feels confident — even without a technical background.
-                            </p>
-                            <div className="abtSvc__tags">
-                                <span className="abtSvc__tag">aitraining</span>
+                            <div className="abtSvc__row__info">
+                                <div className="abtSvc__img-wrap">
+                                    <img src={service.image} alt={service.alt} />
+                                </div>
+
+                                <div className="abtSvc__desc-col">
+                                    <p className="abtSvc__desc">
+                                        {service.desc}
+                                    </p>
+
+                                    <div className="abtSvc__tags">
+                                        {service.tags.map((tag, tagIndex) => (
+                                            <span className="abtSvc__tag" key={tagIndex}>
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
+                        </div>
+                    ))}
                 </div>
 
             </div>
