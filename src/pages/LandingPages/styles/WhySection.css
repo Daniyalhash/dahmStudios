@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ─── Why Section ────────────────────────────────────── */
+.whySec__root {
+    width: 100%;
+    min-height: 100vh;
+    background: #f5f5f5;
+    position: relative;
+    padding:180px 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.whySec__root::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(to right,
+            rgba(0, 0, 0, 0.04) 0px,
+            rgba(255, 255, 255, 0.04) 2px,
+            transparent 1px,
+            transparent 100%);
+    background-size: 20% 100%;
+    /* 100% / 5 = 20% → exactly 5 columns */
+    pointer-events: none;
+    z-index: 1;
+}
+
+.whySec__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 100%;
+    margin: 0 auto;
+    min-height: 80vh;
+}
+
+/* ─── Left ── */
+.whySec__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 56px;
+    height: 100%;
+}
+
+.whySec__left-top {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    padding: 0 24px 0 0;
+}
+
+
+.whySec__tag-num {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    color: #0a0a0a;
+    letter-spacing: -0.04em;
+}
+
+.whySec__tag-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+}
+
+.whySec__heading {
+    font-family: "Sora", sans-serif;
+    font-size: 96px;
+    font-weight: 800;
+    line-height:90%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    margin: 0;
+    color: #171717;
+
+    max-width: 780px;
+}
+
+.whySec__heading span {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.whySec__subtext {
+    font-family: "Geist", sans-serif;
+    font-size: 18px;
+    color: #17171799;
+    line-height: 140%;
+    margin: 0;
+    letter-spacing: -.02em;
+    /* max-width: 280px; */
+}
+
+/* ─── Right ── */
+.whySec__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 0;
+}
+
+.whySec__right-top {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.why__badge{
+    opacity: .2;
+}
+.whySec__right-top__sub{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+    width: 100%;
+}
+/* half-circle graphic */
+.whySec__graphic {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.12);
+    margin-bottom: 60px;
+    /* clip left half */
+    clip-path: inset(0 0 0 50%);
+    transform: translateX(-50%);
+}
+
+.whySec__advantages-title {
+    font-family: "Sora","Sora Placeholder",sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 110%;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    color: #171717;
+}
+
+.whySec__advantages-title strong {
+    color: rgba(23, 23, 23, 0.34);
+}
+
+/* ─── List ── */
+.whySec__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.whySec__list-item {
+    display: flex;
+    
+    align-items: center;
+    gap: 18px;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    position: relative;
+}
+
+.whySec__list-item:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.whySec__item-num {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    border:none;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.whySec__item-num span {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: #17171799;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+}
+
+.whySec__item-label {
+    font-family: "IBM Plex Mono",monospace;
+    font-size: 15px;
+    color:#17171799;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 140%;
+    margin: 0;
+    font-weight: 500;
+}
+
+.whySec__item-label strong {
+    color: #171717;
+    font-weight: 500;
+}
+
+
+
+/* ─── Footer row ── */
+.whySec__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+}
+
+.whySec__footer-source {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+
+.whySec__footer-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: #17171799;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 140%;
+}
+
+.whySec__footer-value {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: #171717;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+.why__footer__calender{
+    width: 20px;
+    height: 20px;
+    color: #17171757;
+}
+.whySec__footer-date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: #171717;
+        font-weight: 500;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* ─── Responsive ── */
+@media (max-width: 1024px) {
+    .whySec__root {
+        padding: 160px 30px;
+    }
+
+    .whySec__left-top{
+        gap: 30px;
+    }
+    .whySec__left{
+        gap: 40px;
+    }
+    .whySec__heading{
+        font-size: 64px;
+    }
+    .whySec__subtext{
+        font-size: 17px;
+    }
+    .whySec__right-top__sub{
+        gap: 70px;
+    }
+    .whySec__advantages-title{
+        font-size: 26px;
+    }
+    .whySec__right-top{
+        gap: 40px;
+    }
+    .whySec__item-label{
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .whySec__item-num span{
+        font-size: 10px;
+    }
+    .whySec__footer-value,
+    .whySec__footer-date,
+    .whySec__footer-label{
+        font-size: 10px;
+    }
+    .whySec__footer-source{
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .whySec__root {
+        padding: 70px 20px 20px;
+    }
+
+    .whySec__inner {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .whySec__left-top{
+        gap: 16px;
+        width: 100%;
+    }
+    .whySec__heading{
+        font-size: 38px;
+                width: 100%;
+
+    }
+    /* .whySec__left{
+        gap: 20px;
+    } */
+    .whySec__left{
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+    }
+    .whySec__right-top__sub{
+        gap: 24px;
+    }
+    .whySec__subtext{
+        font-size: 15px;
+    }
+    .whySec__advantages-title{
+        font-size: 24px;
+    }
+    .whySec__right-top{
+        gap: 34px;
+    }
+    .whySec__list-item{
+        gap: 14px;
+        padding: 16px;
+    }
+    .whySec__item-label{
+        font-size: 13px;
+    }
+    .whySec__footer-source{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+}
+
+@media (max-width: 540px) {
+    .whySec__inner{
+        gap: 28px;
+    }
+    .whySec__left {
+        min-height: 5vh;
+    }
+}
