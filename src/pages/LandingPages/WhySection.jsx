@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/WhySection.css'
 import CustomLogo from '../../components/CustomLogo/CustomLogo';
 import { Calendar } from 'lucide-react';
+import GrainCanvas from '../../components/GrainCanvas';
 const advantagesData = [
     {
         num: "01",
@@ -28,6 +29,10 @@ const advantagesData = [
 export default function WhySection() {
     return (
         <section className="whySec__root" data-navbar-theme="dark">
+            {/* grain covers entire section */}
+            <div className="aboutSection__grain-wrapper">
+                <GrainCanvas opacity={0.04} speed={0.9} />
+            </div>
             <div className="whySec__inner">
 
                 {/* ── Left ── */}
@@ -60,7 +65,7 @@ export default function WhySection() {
                             dahm
                         </h2>
                     </div>
-                    
+
                     <p className="whySec__subtext">
                         We make AI adoption simple,<br />
                         strategic, and measurable.
