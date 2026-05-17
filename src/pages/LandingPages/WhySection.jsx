@@ -2,6 +2,9 @@ import React from 'react';
 import './styles/WhySection.css'
 import CustomLogo from '../../components/CustomLogo/CustomLogo';
 import { Calendar } from 'lucide-react';
+import phoneImg from '../../assets/images/prototype/phone.avif'
+import elipse from '../../assets/images/prototype/elipse.avif'
+
 import GrainCanvas from '../../components/GrainCanvas';
 const advantagesData = [
     {
@@ -25,7 +28,23 @@ const advantagesData = [
         strong: "Transparent Costs",
     },
 ];
-
+const phoneStatsData = [
+    {
+        num: "3",
+        unit: "x",
+        label: ["Faster", "Approvals"],
+    },
+    {
+        num: "99",
+        unit: "%",
+        label: ["Uptime"],
+    },
+    {
+        num: "+28",
+        unit: "%",
+        label: ["Faster", "Responses"],
+    },
+];
 export default function WhySection() {
     return (
         <section className="whySec__root" data-navbar-theme="dark">
@@ -117,6 +136,94 @@ export default function WhySection() {
 
 
                 </div>
+
+            </div>
+            {/* ── Phone Sub-Section ── */}
+            <div className="whyPhone__wrap">
+
+                {/* Left */}
+                <div className="whyPhone__left">
+
+                    <div className="whyPhone__stats">
+                        {phoneStatsData.map((item) => (
+                            <div key={item.num} className="whyPhone__stat">
+                                <div className='whyPhone__stat__num__details'>
+                                    <p className="whyPhone__stat-num">{item.num}</p>
+                                    <span className="whyPhone__stat-unit">{item.unit}</span>
+                                </div>
+
+                                <div className="whyPhone__stat-meta">
+
+                                    <span className="whyPhone__stat-label">
+                                        {item.label.map((line, i) => (
+                                            <React.Fragment key={i}>
+                                                {line}
+                                                {i < item.label.length - 1 && <br />}
+                                            </React.Fragment>
+                                        ))}
+                                    </span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                </div>
+                <div className="whyPhone__right">
+                    {/* Content */}
+                    <div className="whyPhone__content">
+                        <div className='whyPhone__content__part1'>
+                            <div className="about__tag">
+                                <div className="about__tag__info">
+                                    <span className="about__tag-dot"
+                                        style={{
+                                            background: '#17171799'
+                                        }}
+                                    />
+                                    <span className="about__tag-num"
+                                        style={{
+                                            color: '#17171799',
+                                            textTransform: 'uppercase'
+                                        }}
+                                    >real time ai control</span>
+                                </div>
+
+
+                            </div>
+
+                            <h3 className="whyPhone__heading">
+                                Your AI, Always In Your Pocket
+                            </h3>
+                        </div>
+
+
+                        <p className="whyPhone__desc">
+                            Run your business smarter — track performance, approve
+                            automations, and get instant insights right from your phone.
+                        </p>
+                    </div>
+
+                    <div className='whyPhone__content__part02'>
+                        <div style={{
+                            opacity: '.2'
+                        }}>
+                            <CustomLogo color="black" size="xs" href="/" />
+
+                        </div>
+                        <img
+                            src={phoneImg}
+                            alt="Hand holding phone with AI dashboard"
+                            className="whyPhone__img"
+                        />
+                        <img
+                            src={elipse}
+                            alt="Hand holding phone with AI dashboard"
+                            className="whyPhone__img__02"
+                        />
+                    </div>
+
+                </div>
+
+               
 
             </div>
         </section>

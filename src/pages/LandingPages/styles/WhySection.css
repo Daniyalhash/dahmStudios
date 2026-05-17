@@ -8,9 +8,13 @@
     min-height: 100vh;
     background: #f5f5f5;
     position: relative;
-    padding:180px 40px;
+    padding: 180px 40px;
     box-sizing: border-box;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 180px;
 }
 
 .whySec__root::before {
@@ -36,7 +40,7 @@
     gap: 0;
     max-width: 100%;
     margin: 0 auto;
-    min-height: 80vh;
+    min-height: unset;
 }
 
 /* ─── Left ── */
@@ -75,7 +79,7 @@
     font-family: "Sora", sans-serif;
     font-size: 96px;
     font-weight: 800;
-    line-height:90%;
+    line-height: 90%;
     letter-spacing: -0.05em;
     text-transform: uppercase;
     margin: 0;
@@ -104,6 +108,8 @@
     flex-direction: column;
     justify-content: space-between;
     padding-left: 0;
+    height: 100%;
+    margin: 0;
 }
 
 .whySec__right-top {
@@ -111,16 +117,19 @@
     flex-direction: column;
     gap: 50px;
 }
-.why__badge{
+
+.why__badge {
     opacity: .2;
 }
-.whySec__right-top__sub{
+
+.whySec__right-top__sub {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 100px;
     width: 100%;
 }
+
 /* half-circle graphic */
 .whySec__graphic {
     width: 70px;
@@ -134,7 +143,7 @@
 }
 
 .whySec__advantages-title {
-    font-family: "Sora","Sora Placeholder",sans-serif;
+    font-family: "Sora", "Sora Placeholder", sans-serif;
     font-size: 30px;
     font-weight: 600;
     line-height: 110%;
@@ -154,16 +163,17 @@
     list-style: none;
     padding: 0;
     margin: 0;
-      position: relative;
+    position: relative;
     z-index: 5;
 
-    background: #f5f5f5; /* hides vertical lines */
+    background: #f5f5f5;
+    /* hides vertical lines */
     overflow: hidden;
 }
 
 .whySec__list-item {
     display: flex;
-    
+
     align-items: center;
     gap: 18px;
     padding: 20px;
@@ -179,7 +189,7 @@
     width: 33px;
     height: 33px;
     border-radius: 50%;
-    border:none;
+    border: none;
     background: #fff;
     display: flex;
     align-items: center;
@@ -196,9 +206,9 @@
 }
 
 .whySec__item-label {
-    font-family: "IBM Plex Mono",monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 15px;
-    color:#17171799;
+    color: #17171799;
     text-transform: uppercase;
     letter-spacing: -0.02em;
     line-height: 140%;
@@ -218,7 +228,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-   
+
 }
 
 .whySec__footer-source {
@@ -245,11 +255,13 @@
     text-transform: uppercase;
     letter-spacing: -0.02em;
 }
-.why__footer__calender{
+
+.why__footer__calender {
     width: 20px;
     height: 20px;
     color: #17171757;
 }
+
 .whySec__footer-date {
     display: flex;
     align-items: center;
@@ -257,114 +269,582 @@
     font-family: "IBM Plex Mono", monospace;
     font-size: 11px;
     color: #171717;
-        font-weight: 500;
+    font-weight: 500;
 
     text-transform: uppercase;
     letter-spacing: 0.04em;
+}
+
+/* ─── Why Phone Sub-Section ─────────────────────────── */
+.whyPhone__wrap {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    gap: 200px;
+    display: grid;
+    background-color: #fff;
+    padding: 60px 0 0;
+    grid-template-columns: 1fr;
+
+}
+
+
+.whyPhone__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ─── Stats row ── */
+.whyPhone__stats {
+    display: grid;
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(50px, 1fr));
+    grid-auto-rows: minmax(0, 1fr);
+    justify-content: center;
+    padding-bottom: 0px;
+
+}
+
+.whyPhone__stat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 0 0 0 60px;
+}
+
+.whyPhone__stat__num__details {
+    display: flex;
+    font-size: 44px;
+    font-family: Geist, "Geist Placeholder", sans-serif;
+    font-weight: 600;
+    color: #171717;
+    line-height: 100%;
+    align-items: flex-end;
+}
+
+
+.whyPhone__stat-num {
+
+    letter-spacing: -0.04em;
+    margin: 0;
+}
+
+.whyPhone__stat-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-top: 0;
+}
+
+.whyPhone__stat-unit {}
+
+.whyPhone__stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 400;
+    color: #17171799;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 140%;
+}
+
+.whyPhone__content__part1 {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: flex-start;
+
+}
+
+/* ─── Bottom content ── */
+.whyPhone__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 60px 60px;
+
+}
+
+.whyPhone__tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.whyPhone__tag-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: #17171799;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.whyPhone__heading {
+    font-family: "Sora", sans-serif;
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 110%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #171717;
+    margin: 0;
+
+    max-width: 440px;
+}
+
+.whyPhone__desc {
+    font-family: "Geist", sans-serif;
+    font-size: 18px;
+    color: #17171799;
+    line-height: 1.55;
+    letter-spacing: -0.02em;
+    margin: 0;
+    line-height: 140%;
+    max-width: 550px;
+    font-weight: 500;
+}
+
+.whyPhone__content__part02 {
+
+    padding: 0 0 60px;
+}
+
+/* ─── Right — image ── */
+.whyPhone__right {
+    display: grid;
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(50px, 1fr));
+    grid-auto-rows: minmax(0, 1fr);
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    /* keeps image inside at all screens */
+
+}
+
+
+
+.whyPhone__img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 353px;
+    height: 508px;
+    object-fit: contain;
+    /* preserves phone proportions */
+    object-position: bottom right;
+    z-index: 1;
+    overflow: visible;
+}
+
+.whyPhone__img__02 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    max-width: 676px;
+    object-fit: cover;
+    object-position: left bottom;
+    z-index: 0;
+}
+
+.whyPhone__badge {
+    position: absolute;
+    bottom: 28px;
+    left: 28px;
+    z-index: 2;
+    opacity: 0.5;
 }
 
 /* ─── Responsive ── */
 @media (max-width: 1024px) {
     .whySec__root {
         padding: 160px 30px;
+        gap: 140px;
     }
 
-    .whySec__left-top{
+    .whySec__left-top {
         gap: 30px;
     }
-    .whySec__left{
+
+    .whySec__left {
         gap: 40px;
     }
-    .whySec__heading{
+
+    .whySec__heading {
         font-size: 64px;
     }
-    .whySec__subtext{
+
+    .whySec__subtext {
         font-size: 17px;
     }
-    .whySec__right-top__sub{
+
+    .whySec__right-top__sub {
         gap: 70px;
     }
-    .whySec__advantages-title{
+
+    .whySec__advantages-title {
         font-size: 26px;
     }
-    .whySec__right-top{
+
+    .whySec__right-top {
         gap: 40px;
     }
-    .whySec__item-label{
+
+    .whySec__item-label {
         font-size: 14px;
         font-weight: 500;
     }
-    .whySec__item-num span{
+
+    .whySec__item-num span {
         font-size: 10px;
     }
+
     .whySec__footer-value,
     .whySec__footer-date,
-    .whySec__footer-label{
+    .whySec__footer-label {
         font-size: 10px;
     }
-    .whySec__footer-source{
+
+    .whySec__footer-source {
         gap: 20px;
+    }
+
+    /* second comp */
+    .whyPhone__wrap {
+        padding: 40px 0 0;
+        gap: 150px;
+    }
+
+    .whyPhone__stat__num__details {
+        font-size: 38px;
+    }
+
+    .whyPhone__stat-label {
+        font-size: 10px;
+    }
+
+    .whyPhone__content {
+        gap: 30px;
+        padding: 0 40px 40px;
+    }
+
+    .whyPhone__heading {
+        font-size: 38px;
+    }
+
+    .whyPhone__img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 300px;
+        height: 424px;
+        object-fit: contain;
+        /* preserves phone proportions */
+        object-position: bottom right;
+        z-index: 1;
+        overflow: visible;
+    }
+
+    .whyPhone__img__02 {
+        width: 50%;
+        max-height: 300px;
+
+    }
+
+    .whyPhone__desc {
+        font-size: 17px;
     }
 }
 
 @media (max-width: 768px) {
     .whySec__root {
         padding: 70px 20px 20px;
+        gap: 50px;
     }
 
     .whySec__inner {
         grid-template-columns: 1fr;
         gap: 0;
     }
-    
-    .whySec__left-top{
+
+    .whySec__left-top {
         gap: 16px;
         width: 100%;
     }
-    .whySec__heading{
+
+    .whySec__heading {
         font-size: 38px;
-                width: 100%;
+        width: 100%;
 
     }
+
     /* .whySec__left{
         gap: 20px;
     } */
-    .whySec__left{
+    .whySec__left {
         gap: 20px;
         padding: 0;
         margin: 0;
     }
-    .whySec__right-top__sub{
+
+    .whySec__right-top__sub {
         gap: 24px;
     }
-    .whySec__subtext{
+
+    .whySec__subtext {
         font-size: 15px;
     }
-    .whySec__advantages-title{
+
+    .whySec__advantages-title {
         font-size: 24px;
     }
-    .whySec__right-top{
+
+    .whySec__right-top {
         gap: 34px;
     }
-    .whySec__list-item{
+
+    .whySec__list-item {
         gap: 14px;
         padding: 16px;
     }
-    .whySec__item-label{
+
+    .whySec__item-label {
         font-size: 13px;
     }
-    .whySec__footer-source{
+
+    .whySec__footer-source {
         flex-direction: column;
         align-items: flex-start;
         gap: 4px;
     }
+
+    /* second cpom */
+    .whyPhone__wrap {
+        padding: 30px 0 0;
+        gap: 50px;
+    }
+
+    .whyPhone__stats {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .whyPhone__stat {
+        padding: 0 0 0 30px;
+    }
+
+    .whyPhone__stat__num__details {
+        font-size: 30px;
+    }
+
+    .whyPhone__stat-label {
+        font-size: 10px;
+    }
+
+    .whyPhone__content {
+        gap: 20px;
+        padding: 0 34px 34px;
+        width: 100%;
+    }
+
+    .whyPhone__right {
+        width: 100%;
+        display: flex !important;
+        flex-direction: column;
+        margin: 0;
+        gap: 0;
+
+    }
+
+    .whyPhone__content__part02 {
+        order: 1;
+        /* ← images still go top on mobile */
+    }
+
+    .whyPhone__content__part02 {
+        align-items: flex-start;
+        align-self: unset;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 0 0 0 30px;
+        width: 100%;
+        overflow: hidden;
+        min-height: 800px;
+        height: 100%;
+    }
+
+    .whyPhone__content__part1 {
+        gap: 16px;
+    }
+
+
+    .whyPhone__heading {
+        font-size: 28px;
+        max-width: 300px;
+    }
+
+    .whyPhone__desc {
+        font-size: 15px;
+        max-width: 400px;
+
+    }
+
+    .whyPhone__img {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        right: 0;
+        width: 530px;
+        height: 730px;
+        object-fit: contain;
+        /* preserves phone proportions */
+        object-position: bottom right;
+        z-index: 1;
+        overflow: visible;
+    }
+
+    .whyPhone__img__02 {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* preserves phone proportions */
+        object-position: bottom right;
+        z-index: 0;
+        bottom: 0;
+        overflow: visible;
+    }
 }
 
 @media (max-width: 540px) {
-    .whySec__inner{
+    .whySec__inner {
         gap: 28px;
     }
+
     .whySec__left {
         min-height: 5vh;
+    }
+    .whyPhone__content__part02 {
+        align-items: flex-start;
+        align-self: unset;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 0 0 0 30px;
+        width: 100%;
+        overflow: hidden;
+        min-height: 600px;
+        height: 100%;
+    }
+     .whyPhone__img {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        right: 0;
+        width: 357px;
+        height: 530px;
+        object-fit: contain;
+        /* preserves phone proportions */
+        object-position: bottom right;
+        z-index: 1;
+        overflow: visible;
+    }
+}
+
+@media (max-width: 435px) {
+    
+    .whyPhone__content__part02 {
+        align-items: flex-start;
+        align-self: unset;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 0 0 0 30px;
+        width: 100%;
+        overflow: hidden;
+        min-height: 450px;
+        height: 100%;
+    }
+     .whyPhone__img {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        right: 0;
+        width: 273px;
+        height: 393px;
+        object-fit: contain;
+        /* preserves phone proportions */
+        object-position: bottom right;
+        z-index: 1;
+        overflow: visible;
+    }
+}
+@media (max-width: 400px) {
+    
+    .whyPhone__content__part02 {
+        align-items: flex-start;
+        align-self: unset;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 0 0 0 30px;
+        width: 100%;
+        overflow: hidden;
+        min-height: 400px;
+        height: 100%;
+    }
+     .whyPhone__img {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        right: 0;
+        width: 244px;
+        height: 350px;
+        object-fit: contain;
+        /* preserves phone proportions */
+        object-position: bottom right;
+        z-index: 1;
+        overflow: visible;
+    }
+}
+@media (max-width: 320px) {
+    
+    .whyPhone__content__part02 {
+        align-items: flex-start;
+        align-self: unset;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 0 0 0 30px;
+        width: 100%;
+        overflow: hidden;
+        min-height: 340px;
+        height: 100%;
+    }
+     .whyPhone__img {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        right: 0;
+        width: 190px;
+        height: 273px;
+        object-fit: contain;
+        /* preserves phone proportions */
+        object-position: bottom right;
+        z-index: 1;
+        overflow: visible;
     }
 }
