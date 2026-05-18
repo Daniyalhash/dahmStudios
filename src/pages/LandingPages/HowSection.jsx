@@ -25,7 +25,40 @@ const howStepsData = [
         strong: "setup & integration",
     },
 ];
-
+const howDelayData = [
+    {
+        num: "01/",
+        label: "Operational Tasks",
+        strong: "Stay Manual",
+        pill: "+83%",
+        pillPos: "83%",      /* left position as % of row width */
+        tag: "/Workload",
+    },
+    {
+        num: "02/",
+        label: "Competitors",
+        strong: "Move Faster",
+        pill: "+55%",
+        pillPos: "55%",
+        tag: "/Growth",
+    },
+    {
+        num: "03/",
+        label: "Missed",
+        strong: "Automation Opportunities",
+        pill: "+66%",
+        pillPos: "66%",
+        tag: "/Opportunities",
+    },
+    {
+        num: "04/",
+        label: "Time Wasted On",
+        strong: "Repetitive Work",
+        pill: "+32%",
+        pillPos: "32%",
+        tag: "/Time",
+    },
+];
 // pie chart as inline SVG — no image needed
 function PieChart() {
     return (
@@ -48,14 +81,101 @@ function PieChart() {
 export default function HowSection() {
     return (
         <section className="howSec__root" data-navbar-theme="dark">
-  {/* grain covers entire section */}
+            {/* grain covers entire section */}
             <div className="aboutSection__grain-wrapper">
                 <GrainCanvas opacity={0.04} speed={0.9} />
             </div>
-            {/* ── Left ── */}
-            <div className="howSec__left">
-                <div className="howSec__left-top">
-                    <div className='howSec__left-top_sub'>
+            <div className='howSec__root__01'>
+                {/* ── Left ── */}
+                <div className="howSec__left">
+                    <div className="howSec__left-top">
+                        <div className='howSec__left-top_sub'>
+                            <div className="about__tag">
+                                <div className="about__tag__info"
+                                    style={{
+                                        alignItems: 'center'
+                                    }}>
+                                    <span className="about__tag-dot"
+                                        style={{
+                                            background: '#171717'
+                                        }}
+                                    />
+                                    <span className="about__tag-num"
+                                        style={{
+                                            color: '#171717'
+                                        }}>05</span>
+                                </div>
+
+
+                                <span className="about__tag-label"
+                                    style={{
+                                        color: '#17171799'
+                                    }}>how we do it</span>
+                            </div>
+
+                            <h2 className="howSec__heading">
+                                The Fast
+                                Track To <span>AI </span>
+                                <span>Success</span>
+                            </h2>
+                        </div>
+
+
+                        <p className="howSec__subtext">
+                            No generic advice. No complex dashboards.<br />
+                            Just practical improvements.
+                        </p>
+                    </div>
+                    <div className='howSec__left-bottom'>
+                        {howStepsData.map((step) => (
+                            <div key={step.num} className="howSec__step">
+                                {/* corner dot grid */}
+
+                                <div className='howSec__step__top'>
+                                    <p className="howSec__step-num">{step.num}</p>
+                                    <div className="howSec__step-corner" aria-hidden="true">
+                                        <span /><span />
+                                        <span /><span />
+
+                                    </div>
+                                </div>
+
+                                <p className="howSec__step-desc">
+                                    {step.desc} <strong>{step.strong}</strong>
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+
+
+                </div>
+
+                {/* ── Right ── */}
+                <div className="howSec__right">
+                    <button className="howSec__cta">
+                        <span className="howSec__cta-label">Start AI Journey</span>
+                        <ChevronRight className="howSec__cta-arrow" />
+                    </button>
+
+
+
+                    {/* ── Bottom stat card ── */}
+                    <div className="howSec__stat-card">
+                        <PieChart />
+                        <p className="howSec__stat-text">
+                            On average, our clients reduce manual
+                            work <strong>by 35% in the first month.</strong>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            {/* ── Delay Sub-Section ── */}
+            <div className="howDelay__wrap">
+
+                {/* Heading */}
+                <div className="howDelay__top">
+                    <div className="howDelay__top-left">
                         <div className="about__tag">
                             <div className="about__tag__info"
                                 style={{
@@ -63,78 +183,67 @@ export default function HowSection() {
                                 }}>
                                 <span className="about__tag-dot"
                                     style={{
-                                        background: '#171717'
+                                        background: '#171717',
+                                        opacity: '.6'
                                     }}
                                 />
                                 <span className="about__tag-num"
                                     style={{
-                                        color: '#171717'
-                                    }}>05</span>
+                                        color: '#17171799',
+                                        textTransform: 'uppercase'
+                                    }}>why delay hurts</span>
                             </div>
 
 
-                            <span className="about__tag-label"
-                                style={{
-                                    color: '#17171799'
-                                }}>how we do it</span>
                         </div>
 
-                        <h2 className="howSec__heading">
-                            The Fast
-                            Track To <span>AI </span>
-                            <span>Success</span>
-                        </h2>
+                        <h3 className="howDelay__heading">
+                            The longer you wait, the more expensive it becomes{" "}
+                            <span>to catch up.</span>
+                        </h3>
                     </div>
-
-
-                    <p className="howSec__subtext">
-                        No generic advice. No complex dashboards.<br />
-                        Just practical improvements.
-                    </p>
                 </div>
-                <div className='howSec__left-bottom'>
-                    {howStepsData.map((step) => (
-                        <div key={step.num} className="howSec__step">
-                            {/* corner dot grid */}
 
-                            <div className='howSec__step__top'>
-                                <p className="howSec__step-num">{step.num}</p>
-                                <div className="howSec__step-corner" aria-hidden="true">
-                                    <span /><span />
-                                    <span /><span />
-                              
+                {/* Rows */}
+                <div className="howDelay__list">
+                    {howDelayData.map((item) => (
+                        <div key={item.num} className="howDelay__row">
+                            <div className='howDelay__row__full'
+                                style={{
+                                    width: window.innerWidth <= 912
+                                        ? `calc(${item.pillPos} + 0px)`
+                                        : `calc(${item.pillPos} + 75px)`
+                                }} >
+                                {window.innerWidth <= 912 ?
+                                    <div className="howDelay__row-left">
+                                        <span className="howDelay__row-num">{item.num}</span>
+                                        <div className="howDelay__row-label-2">
+                                            <span>{item.label}</span>
+                                            <strong>{item.strong}</strong>
+                                        </div>
+                                    </div> : <div className="howDelay__row-left">
+                                        <span className="howDelay__row-num">{item.num}</span>
+                                        <span className="howDelay__row-label">
+                                            {item.label} <strong>{item.strong}</strong>
+                                        </span>
+                                    </div>}
+
+                                {/* pill floats at custom left % */}
+                                <div
+                                    className="howDelay__pill"
+                                    style={{ left: item.pillPos }}
+                                >
+                                    <span>{item.pill}</span>
                                 </div>
                             </div>
 
-                            <p className="howSec__step-desc">
-                                {step.desc} <strong>{step.strong}</strong>
-                            </p>
+                            <span className="howDelay__row-tag">{item.tag}</span>
                         </div>
                     ))}
                 </div>
 
-
             </div>
 
-            {/* ── Right ── */}
-            <div className="howSec__right">
-                <button className="howSec__cta">
-                    <span className="howSec__cta-label">Start AI Journey</span>
-                    <ChevronRight className="howSec__cta-arrow" />
-                </button>
-
-
-
-                {/* ── Bottom stat card ── */}
-                <div className="howSec__stat-card">
-                    <PieChart />
-                    <p className="howSec__stat-text">
-                        On average, our clients reduce manual
-                        work <strong>by 35% in the first month.</strong>
-                    </p>
-                </div>
-
-            </div>
 
         </section>
     );

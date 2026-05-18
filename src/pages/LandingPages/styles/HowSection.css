@@ -6,6 +6,18 @@
     display: grid;
     padding: 180px 40px 220px;
     grid-template-columns: 1fr;
+    gap: 180px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.howSec__root__01 {
+    width: 100%;
+    background: #ebebeb;
+    position: relative;
+    display: grid;
+
+    grid-template-columns: 1fr;
     gap: 120px;
     box-sizing: border-box;
     overflow: hidden;
@@ -259,9 +271,190 @@
     color: #171717;
 }
 
+/* section 02 ------------------------------ */
+/* ─── Delay Sub-Section ─────────────────────────────── */
+.howDelay__wrap {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+/* ─── Top heading block ── */
+.howDelay__top {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.howDelay__top-left {
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+}
+
+
+
+
+
+.howDelay__heading {
+    font-family: "Sora", sans-serif;
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 110%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #171717;
+    margin: 0;
+
+    max-width: 660px;
+}
+
+.howDelay__heading span {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+/* ─── Rows ── */
+.howDelay__list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.howDelay__row {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    height: 70px;
+    justify-content: space-between;
+    padding: 0 28px 0 0;
+    position: relative;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+}
+.howDelay__row__full {
+    background-color: #f5f5f5;
+    height: 70px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    padding: 0 5px 0 25px;
+    flex-shrink: 0;                  /* ← don't compress */
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    z-index: 1;
+}
+.howDelay__row-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: unset;
+    padding-left: 0;
+    flex-shrink: 0;
+}
+
+.howDelay__row-num {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: #17171799;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
+    line-height: 140%;
+}
+
+.howDelay__row-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 15px;
+    color: #17171799;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    line-height: 140%;
+
+    white-space: nowrap;
+}
+
+.howDelay__row-label strong {
+    color: #171717;
+        font-weight: 500;
+
+}
+.howDelay__row-label-2 {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 15px;
+    color: #17171799;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    line-height: 140%;
+
+    white-space: nowrap;
+}
+
+.howDelay__row-label-2 strong {
+    color: #171717;
+    font-weight: 400;
+}
+/* the percentage pill — positioned absolutely along the row */
+.howDelay__pill {
+    position: absolute;
+    top: 50%;
+   
+    transform: translateY(-50%);
+    background: #171717;
+    border-radius: 50px;
+    width: 90px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 6px 0px, rgba(0, 0, 0, 0.09) 0px 11px 11px 0px, rgba(0, 0, 0, 0.05) 0px 24px 14px 0px, rgba(0, 0, 0, 0.01) 0px 42px 17px 0px, rgba(0, 0, 0, 0) 0px 66px 19px 0px;
+}
+
+.howDelay__pill span {
+    font-family: "Sora", "Sora Placeholder", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.05em;
+    white-space: nowrap;
+    line-height: 110%;
+}
+
+.howDelay__row-tag {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    color: #17171799;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    text-align: right;
+    padding-right: 0;
+    line-height: 135%;
+    font-weight: 500;
+    white-space: nowrap;
+    justify-self: end;
+}
+
 @media (max-width: 1024px) {
     .howSec__root {
         padding: 140px 30px 160px;
+        gap: 120px;
+    }
+
+    .howSec__root__01 {
         gap: 80px;
     }
 
@@ -309,21 +502,72 @@
     .howSec__cta-label {
         font-size: 14px;
     }
+    /* second comp */
+    .howDelay__wrap{
+        gap: 70px;
+    }
+    .howDelay__row{
+          border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    height: 60px;
+        background-color: #f5f5f5;
+    }
+   .howDelay__heading{
+    font-size: 38px;
+    max-width:580px
+   }
+   .howDelay__row-label{
+    font-size: 14px;
+   }
+   .howDelay__row-label-2{
+    font-size: 14px;
+   }
+   .howDelay__row-num{
+    font-size: 10px;
+   }
+   .howDelay__pill span{
+    font-size: 16px;
+   }
+   .howDelay__row-tag{
+    display: none;
+   }
+   .howDelay__row__full{
+    
+        height: 60px;
+
+    background-color: rgb(255, 255, 255);
+   }
+     .howDelay__pill {
+        left: calc(100% - 70px) !important;
+        transform: translate(0, -50%);  
+        position: absolute;
+        width: 70px;
+        height: 100%;
+       /* ← no longer center-aligned, right-pinned */
+    }
+  
 }
 
 @media (max-width: 770px) {
     .howSec__root {
         padding: 70px 20px 50px;
+        gap: 60px;
+    }
+
+    .howSec__root__01 {
         gap: 50px;
     }
 
     .howSec__left {
-        display: flex;                  /* ← swap grid for flex */
+        display: flex;
+        /* ← swap grid for flex */
         flex-direction: column;
         gap: 40px;
-        height: auto;                   /* ← no fixed height */
-        min-height: unset;              /* ← kill the 100px min */
-        
+        height: auto;
+        /* ← no fixed height */
+        min-height: unset;
+        /* ← kill the 100px min */
+
     }
 
     .howSec__left-top_sub {
@@ -357,28 +601,55 @@
         height: 170px;
 
     }
-    .howSec__right{
+
+    .howSec__right {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 40px;
     }
-    .howSec__pie{
+
+    .howSec__pie {
         height: 182px;
         width: 182px;
     }
-    .howSec__stat-card{
+
+    .howSec__stat-card {
         gap: 26px;
     }
-    .howSec__cta-label{
+
+    .howSec__cta-label {
         font-size: 13px;
     }
-    .howSec__cta-arrow{
+
+    .howSec__cta-arrow {
         width: 20px;
         height: 20px;
     }
-    .howSec__stat-text{
+
+    .howSec__stat-text {
         font-size: 12px;
+    }
+    /* second */
+    .howDelay__top-left{
+        gap: 16px;
+    }
+    .howDelay__wrap{
+        gap: 36px;
+    }
+    .howDelay__heading{
+        font-size: 28px;
+        max-width: 660px;
+    }
+    .howDelay__pill span{
+        font-size: 14px;
+    }
+    .howDelay__row-label{
+        font-size: 13px;
+    }
+    .howDelay__row-label-2{
+        font-size: 13px;
+        font-weight: 500;
     }
 }
 
@@ -420,23 +691,28 @@
         height: 170px;
 
     }
-    .howSec__right{
+
+    .howSec__right {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 40px;
     }
-    .howSec__pie{
+
+    .howSec__pie {
         height: 125px;
         width: 125px;
     }
-    .howSec__stat-card{
+
+    .howSec__stat-card {
         gap: 26px;
     }
-    .howSec__cta-label{
+
+    .howSec__cta-label {
         font-size: 13px;
     }
-    .howSec__cta-arrow{
+
+    .howSec__cta-arrow {
         width: 20px;
         height: 20px;
     }
@@ -444,8 +720,11 @@
 
 
 @media (max-width: 435px) {
-    .howSec__pie{
+    .howSec__pie {
         width: 100px;
         height: 100px;
+    }
+    .howDelay__row__full{
+        width: 0%;
     }
 }
