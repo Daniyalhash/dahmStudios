@@ -1,0 +1,451 @@
+/* ─── How Section ────────────────────────────────────── */
+.howSec__root {
+    width: 100%;
+    background: #ebebeb;
+    position: relative;
+    display: grid;
+    padding: 180px 40px 220px;
+    grid-template-columns: 1fr;
+    gap: 120px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.howSec__root::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(to right,
+            rgba(0, 0, 0, 0.04) 0px,
+            rgba(0, 0, 0, 0.04) 1.5px,
+            transparent 1px,
+            transparent 100%);
+    background-size: 20% 100%;
+    /* 100% / 5 = 20% → exactly 5 columns */
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ─── Left ── */
+.howSec__left {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+}
+
+.howSec__left-top {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+
+.howSec__left-top_sub {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    padding: 0 24px 0 0;
+}
+
+.howSec__heading {
+    font-family: "Sora", sans-serif;
+    font-size: 96px;
+    font-weight: 600;
+    line-height: 90%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #171717;
+    margin: 0;
+}
+
+.howSec__heading span {
+    color: rgba(23, 23, 23, 0.34);
+}
+
+.howSec__subtext {
+    font-family: "Geist", sans-serif;
+    font-size: 18px;
+    color: #17171799;
+    line-height: 140%;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+/* ─── CTA ── */
+.howSec__cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    width: 50%;
+    height: 80px;
+    padding: 0 20px 0 28px;
+    position: relative;
+
+}
+
+.howSec__cta::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    height: 2px;
+    background: linear-gradient(90deg, rgb(163, 27, 182) 0%, rgb(89, 187, 213) 26.5373%, rgb(201, 197, 199) 50.9615%, rgb(232, 97, 103) 74.0385%, rgb(245, 69, 16) 100%);
+    transform: scaleX(100deg);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.howSec__cta:hover::after {
+    transform: scaleX(1);
+}
+
+.howSec__cta-label {
+    font-family: "Sora", "Sora Placeholder", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #171717;
+    line-height: 90%;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+}
+
+.howSec__cta-arrow {
+    width: 28px;
+    height: 28px;
+    color: #171717;
+    flex-shrink: 0;
+}
+
+
+/* ─── Step cards ── */
+.howSec__left-bottom {
+    display: grid;
+    flex: 1 0 0;
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(50px, 1fr));
+    grid-auto-rows: minmax(0, 1fr);
+    justify-content: center;
+    z-index: 2;
+    position: relative;
+    overflow: visible;
+}
+
+.howSec__step {
+    border: .5px solid rgba(0, 0, 0, 0.07);
+    background-color: #f5f5f5;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 36px;
+}
+
+.howSec__step__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+.howSec__step-corner {
+    position: relative;
+    top: 0px;
+    right: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 3px;
+    opacity: 0.25;
+    width: 7px;
+    height: 14px;
+}
+
+.howSec__step-corner span {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #171717;
+    display: block;
+}
+
+.howSec__step-num {
+    font-family: "Geist", "Geist Placeholder", sans-serif;
+    font-size: 44px;
+    font-weight: 600;
+    color: #171717;
+    letter-spacing: -0.05em;
+    line-height: 100%;
+    margin: 0;
+}
+
+.howSec__step-desc {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: #17171799;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 140%;
+    margin: 0;
+    font-weight: 500;
+}
+
+.howSec__step-desc strong {}
+
+/* ─── Right ── */
+.howSec__right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    width: 100%;
+    align-items: flex-end;
+}
+
+/* cross divider between 02 and 03 */
+.howSec__cross {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.2);
+    line-height: 1;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* ─── Bottom stat card ── */
+.howSec__stat-card {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.howSec__pie {
+    width: 95px;
+    height: 95px;
+    flex-shrink: 0;
+}
+
+.howSec__stat-text {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    color: #17171799;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    line-height: 135%;
+    margin: 0;
+    max-width: 280px;
+}
+
+.howSec__stat-text strong {
+    color: #171717;
+}
+
+@media (max-width: 1024px) {
+    .howSec__root {
+        padding: 140px 30px 160px;
+        gap: 80px;
+    }
+
+    .howSec__heading {
+        font-size: 64px;
+    }
+
+    .howSec__left-top_sub {
+        gap: 30px;
+    }
+
+    .howSec__left-top {
+        gap: 40px;
+    }
+
+    .howSec__step {
+        padding: 28px;
+        height: 210px;
+    }
+
+    .howSec__step-num {
+        font-size: 38px;
+    }
+
+    .howSec__step-corner {
+        height: 10px;
+    }
+
+    .howSec__step-desc {
+        font-size: 10px;
+    }
+
+    .howSec__stat-card {
+        order: -1;
+    }
+
+    .howSec__stat-text {
+        font-size: 12px;
+    }
+
+    .howSec__cta {
+        width: 100%;
+    }
+
+    .howSec__cta-label {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 770px) {
+    .howSec__root {
+        padding: 70px 20px 50px;
+        gap: 50px;
+    }
+
+    .howSec__left {
+        display: flex;                  /* ← swap grid for flex */
+        flex-direction: column;
+        gap: 40px;
+        height: auto;                   /* ← no fixed height */
+        min-height: unset;              /* ← kill the 100px min */
+        
+    }
+
+    .howSec__left-top_sub {
+        gap: 16px;
+    }
+
+    .howSec__heading {
+        font-size: 38px;
+        font-weight: 700;
+    }
+
+    .howSec__left-top {
+        gap: 20px;
+    }
+
+    .howSec__subtext {
+        font-size: 15px;
+    }
+
+    .howSec__left-bottom {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .howSec__step-num {
+        font-size: 30px;
+    }
+
+    .howSec__step {
+        padding: 26px;
+        height: 170px;
+
+    }
+    .howSec__right{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+    .howSec__pie{
+        height: 182px;
+        width: 182px;
+    }
+    .howSec__stat-card{
+        gap: 26px;
+    }
+    .howSec__cta-label{
+        font-size: 13px;
+    }
+    .howSec__cta-arrow{
+        width: 20px;
+        height: 20px;
+    }
+    .howSec__stat-text{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 540px) {
+    .howSec__root {
+        padding: 70px 20px 50px;
+        gap: 50px;
+    }
+
+
+    .howSec__left-top_sub {
+        gap: 16px;
+    }
+
+    .howSec__heading {
+        font-size: 38px;
+        font-weight: 700;
+    }
+
+    .howSec__left-top {
+        gap: 20px;
+    }
+
+    .howSec__subtext {
+        font-size: 15px;
+    }
+
+    .howSec__left-bottom {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .howSec__step-num {
+        font-size: 30px;
+    }
+
+    .howSec__step {
+        padding: 26px;
+        height: 170px;
+
+    }
+    .howSec__right{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+    .howSec__pie{
+        height: 125px;
+        width: 125px;
+    }
+    .howSec__stat-card{
+        gap: 26px;
+    }
+    .howSec__cta-label{
+        font-size: 13px;
+    }
+    .howSec__cta-arrow{
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
+@media (max-width: 435px) {
+    .howSec__pie{
+        width: 100px;
+        height: 100px;
+    }
+}

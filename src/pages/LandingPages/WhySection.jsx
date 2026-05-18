@@ -204,7 +204,7 @@ export default function WhySection() {
 
                     <div className='whyPhone__content__part02'>
                         <div style={{
-                            opacity: '.2'
+                            opacity: '.4'
                         }}>
                             <CustomLogo color="black" size="xs" href="/" />
 
