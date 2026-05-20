@@ -61,9 +61,7 @@ const teamData = [
 function TeamCard({ member, index }) {
     return (
         <div className="teamCard">
-            <div className="csSec__grain-wrapper">
-                <GrainCanvas opacity={.04} speed={.9} />
-            </div>
+           
             {/* Role row */}
             <div className="teamCard__role-row">
                 <span className="teamCard__role">{member.role}</span>
@@ -115,6 +113,9 @@ function TeamCard({ member, index }) {
 export default function TeamSection() {
     return (
         <section className="teamSec__root" data-navbar-theme="dark">
+         <div className="csSec__grain-wrapper">
+                <GrainCanvas opacity={.04} speed={.9} />
+            </div>
             <div className="teamSec__root__container">
 
                 {/* Header — untouched from your original */}
