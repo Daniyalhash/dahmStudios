@@ -4,6 +4,7 @@ import CustomLogo from '../../components/CustomLogo/CustomLogo';
 import './styles/CaseStudySection.css';
 import caseStudyImg from './../../assets/images/caseStudies/backImg.avif';
 import authorImg from './../../assets/images/caseStudies/people.avif';
+import GrainCanvas from '../../components/GrainCanvas';
 const csMetaData = [
     { key: "Date:", val: "Mar 2025" },
     { key: "Industry:", val: "Retail & E-Commerce" },
@@ -63,6 +64,9 @@ export default function CaseStudySection() {
     }, []);
     return (
         <section className="csSec__root" data-navbar-theme="dark">
+            <div className="csSec__grain-wrapper">
+                <GrainCanvas opacity={.04} speed={.9} />
+            </div>
             <div className='csSec__root__container'>
                 {/* ── Left ── */}
                 <div className="csSec__left">

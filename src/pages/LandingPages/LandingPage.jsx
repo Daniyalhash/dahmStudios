@@ -6,6 +6,7 @@ import WhySection from "./WhySection";
 import HowSection from "./HowSection";
 import CaseStudySection from "./CaseStudySection";
 // import MoreProjectsSection from "./MoreProjectsSection";
+import TeamSection from "./TeamSection";
 // import Showcase01 from "./Showcase01";
 
 export default function LandingPage() {
@@ -16,8 +17,7 @@ export default function LandingPage() {
             <WhySection />
             <HowSection />
             <CaseStudySection />
-            {/* <MoreProjectsSection /> */}
-            {/* <Showcase01 /> */}
+            <TeamSection />
         </div>
     );
 }

@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ─── Team Section ───────────────────────────────────── */
+.teamSec__root {
+    width: 100%;
+    background: #f5f5f5;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 220px 40px 180px;
+}
+
+.teamSec__root::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(to right,
+            rgba(0, 0, 0, 0.04) 0px,
+            rgba(0, 0, 0, 0.04) 1.5px,
+            transparent 1px,
+            transparent 100%);
+    background-size: 20% 100%;
+    /* 100% / 5 = 20% → exactly 5 columns */
+    pointer-events: none;
+    z-index: 1;
+}
+
+.teamSec__root__container {
+    z-index: 3;
+    flex-flow: column;
+    flex: 1 0 0;
+    display: flex;
+    gap: 90px;
+    align-items: flex-start;
+    max-width: 1920px;
+}
+
+/* ─── Header row ── */
+.teamSec__header {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(50px, 1fr));
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+    grid-auto-rows: minmax(0, 1fr);
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.teamSec__filler {
+    height: 100%;
+    place-self: start;
+    width: 100%;
+    position: relative;
+}
+
+
+
+.teamSec__header-cell {
+    width: 1150px;
+}
+
+.teamSec__header-cell--main {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    padding: 0 24px 0 0;
+    width: 100%;
+    align-items: flex-start;
+    position: relative;
+    grid-column: span 3;
+}
+
+
+.teamSec__heading {
+    font-family: "Sora", sans-serif;
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    width: 100%;
+    text-transform: uppercase;
+    color: #171717;
+    margin: 0;
+    line-height: 90%;
+}
+
+.teamSec__body {
+    flex-flow: row;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+}
+
+.teamSec__body__header {
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+
+}
+
+
+
+/* ─── Role label row ── */
+.teamSec__roles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    position: relative;
+    z-index: 2;
+}
+
+.teamSec__role-cell {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 9px 6px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    height: 27px;
+
+}
+
+.teamSec__role-cell:last-child {
+    border-right: none;
+}
+
+.teamSec__role-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: #17171799;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 140%;
+}
+
+.teamSec__role-dots {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    align-items: center;
+}
+
+.teamSec__role-dot {
+    width: 4px;
+    height: 4px;
+    background-color: #171717;
+    border-radius: 50px;
+    opacity: .2;
+}
+
+/* ─── Photos row ── */
+.teamSec__photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    position: relative;
+    z-index: 1;
+}
+
+.teamSec__photo-cell {
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    position: relative;
+}
+
+.teamSec__photo-cell::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+
+    background: linear-gradient(90deg,
+            rgb(163, 27, 182) 0%,
+            rgb(89, 187, 213) 26%,
+            rgb(232, 97, 103) 74%,
+            rgb(245, 69, 16) 100%);
+
+    z-index: 2;
+}
+
+.teamSec__photo-cell:last-child {
+    border-right: none;
+}
+
+.teamSec__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(100%);
+    display: block;
+    transition: filter 0.4s ease, transform 0.5s ease;
+}
+
+.teamSec__name-info__body {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/* ─── Name row ── */
+.teamSec__names {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    position: relative;
+    z-index: 1;
+}
+
+.teamSec__name-cell {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 25px 30px 30px;
+    gap: 15px;
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.teamSec__name-cell:last-child {
+    border-right: none;
+}
+
+.teamSec__name-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.teamSec__name-badge {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.teamSec__name-badge-inner {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #171717;
+    flex-shrink: 0;
+}
+
+.teamSec__name-badge-inner:last-child {
+    margin-left: -6px;
+    background: #888;
+}
+
+.teamSec__name {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 18px;
+    font-weight: 600;
+    color: #171717;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin: 0;
+    line-height: 135%;
+}
+
+.teamSec__name-sub {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: #17171799;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin: 0;
+    display: block;
+}
+
+.teamSec__name-corner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    width: 7px;
+    height: 14px;
+    opacity: 0.2;
+}
+
+.teamSec__name-corner span {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #171717;
+    display: block;
+}
+
+/* ─── Skills row ── */
+.teamSec__skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    position: relative;
+    z-index: 1;
+}
+
+.teamSec__skill-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 30px 24px 30px 30px;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.teamSec__skill-cell:last-child {
+    border-right: none;
+}
+
+.teamSec__skill-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* barcode-like graphic */
+.teamSec__skill-bar {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5px;
+    width: 70px;
+    height: 14px;
+}
+
+.teamSec__skill-bar span {
+    display: block;
+    height: 100%;
+    background: #171717;
+    opacity: 0.15;
+    border-radius: 1px;
+}
+
+.teamSec__skill-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: #171717;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+
+/* ─── Bottom corner plus ── */
+.teamSec__plus {
+    position: absolute;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.2);
+    line-height: 1;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.teamSec__plus--bl {
+    bottom: 14px;
+    left: 14px;
+}
+
+.teamSec__plus--bc1 {
+    bottom: 14px;
+    left: 25%;
+}
+
+.teamSec__plus--bc2 {
+    bottom: 14px;
+    left: 50%;
+}
+
+.teamSec__plus--bc3 {
+    bottom: 14px;
+    left: 75%;
+}
+
+.teamSec__plus--br {
+    bottom: 14px;
+    right: 14px;
+}
+
+/* ─── Responsive ── */
+@media (max-width: 1024px) {
+    .teamSec__root {
+        padding: 160px 30px;
+    }
+
+    .teamSec__root__container {
+        gap: 70px;
+    }
+
+    .teamSec__header-cell--main {
+        gap: 30px;
+    }
+
+    .teamSec__heading {
+        font-size: 64px;
+    }
+
+    .teamSec__role-label {
+        font-size: 10px;
+    }
+
+    .teamSec__name-cell {
+        padding: 22px;
+        flex-direction: row-reverse;
+        gap: 6px;
+    }
+
+    .teamSec__name {
+        font-size: 15px;
+    }
+
+    .teamSec__name-sub {
+        font-size: 10px;
+    }
+
+    .teamSec__name-corner {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .teamSec__root {
+        padding: 70px 20px 40px;
+    }
+
+    .teamSec__header-cell--main {
+        gap: 16px;
+    }
+
+    .teamSec__heading {
+        font-size: 38px;
+    }
+
+    .teamSec__root__container {
+        gap: 36px;
+    }
+
+    .teamSec__header {
+        grid-template-columns: 1fr;
+    }
+
+    .teamSec__filler {
+        display: none;
+    }
+
+
+    /* .teamSec__header {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .teamSec__header-cell:nth-child(n+3) {
+        display: none;
+    }
+
+    .teamSec__roles {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .teamSec__role-cell:nth-child(n+3) {
+        display: none;
+    }
+
+    .teamSec__photos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .teamSec__names {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .teamSec__skills {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .teamSec__heading {
+        font-size: clamp(36px, 9vw, 56px);
+    } */
+}
+
+@media (max-width: 540px) {}

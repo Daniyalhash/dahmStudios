@@ -482,7 +482,13 @@
     font-weight: 500;
 
 }
-
+.csSec__grain-wrapper {
+     position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+}
 /* ─── Responsive ── */
 @media (max-width: 1024px) {
 

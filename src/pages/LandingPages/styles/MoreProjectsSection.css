@@ -8,27 +8,25 @@
     background: #f5f5f5;
     position: relative;
     display: grid;
-    grid-template-columns: 100px 1fr 1fr;
+    grid-template-columns: 1fr 2fr ;
     box-sizing: border-box;
     overflow: hidden;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  
 }
 
 .moreProj__root::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image:
-        linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
-        linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
-        linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
-        linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
-        linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px);
-    background-size: 100% 100%;
-    background-position: 20% 0, 40% 0, 60% 0, 80% 0, 100% 0;
-    background-repeat: no-repeat;
+    background-image: repeating-linear-gradient(to right,
+            rgba(0, 0, 0, 0.04) 0px,
+            rgba(0, 0, 0, 0.04) 1.5px,
+            transparent 1px,
+            transparent 100%);
+    background-size: 20% 100%;
+    /* 100% / 5 = 20% → exactly 5 columns */
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
 }
 
 /* ─── Col 1 — label ── */
